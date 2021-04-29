@@ -19,13 +19,11 @@ public class Flight extends Module {
 
     @Override
     public void onEnable() {
-        CHelper.sendMessage("Toggling Flight on!");
         super.onEnable();
     }
 
     @Override
     public void onDisable() {
-        CHelper.sendMessage("Toggled Flight off!");
         MinecraftClient.getInstance().player.abilities.flying = false;
         super.onDisable();
     }

@@ -5,10 +5,11 @@ import me.tl0x.main.etc.based.Command;
 import me.tl0x.main.etc.reg.ModuleReg;
 import net.minecraft.client.MinecraftClient;
 import me.tl0x.main.etc.based.Module;
+import me.tl0x.main.etc.reg.CommandRegistry;
+import net.minecraft.util.Formatting;
 
 
 public class Toggle extends Command {
-    double fallDistance = 2;
 
     public Toggle() {
         super("Toggle", "Test command", new String[]{"toggle"});
@@ -20,14 +21,21 @@ public class Toggle extends Command {
             CHelper.sendMessage("What module do you want?");
             return;
         }
+
         Module m = ModuleReg.getModulebyName(args[1]);
         if (m == null) {
             CHelper.sendMessage("Invalid Module!");
             return;
         }
         m.isEnabled = !m.isEnabled;
-        if (m.isEnabled) m.onEnable();
-        else m.onDisable();
+        if (m.isEnabled) {
+            m.onEnable();
+            CHelper.sendMessage("Toggled" + m.getName() + Formatting.GREEN + " On");
+        }
+        else {
+            m.onDisable();
+            CHelper.sendMessage("Toggled" + m.getName() + Formatting.RED + " Off");
+        }
 
     }
 

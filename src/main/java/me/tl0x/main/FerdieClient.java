@@ -9,8 +9,8 @@ import org.apache.logging.log4j.Logger;
 
 public class FerdieClient implements ModInitializer {
 
-    public static final String MOD_ID = "xcarry-tl0x";
-    public static final String MOD_NAME = "xcarry";
+    public static final String MOD_ID = "ferdieclient";
+    public static final String MOD_NAME = "FerdieClient";
     public static Logger LOGGER = LogManager.getLogger();
 
     public static void log(Level level, String message) {

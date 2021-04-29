@@ -12,7 +12,10 @@ public class ModuleReg {
     public static void init() {
         modules.add(new Freeze());
         modules.add(new Flight());
-        modules.add(new Test());
+        modules.add(new Triggerbot());
+        modules.add(new SpeedMine());
+        modules.add(new ClickTP());
+        modules.add(new NoFall());
     }
 
     public static List<Module> getModules() {

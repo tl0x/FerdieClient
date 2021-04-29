@@ -1,5 +1,5 @@
 package me.tl0x.main;
 
 public class Config {
-    public static String prefix = "}}";
+    public static String prefix = "@";
 }

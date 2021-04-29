@@ -1,6 +1,7 @@
 package me.tl0x.main.etc.reg;
 
-import me.tl0x.main.command.Toggle;
+import me.tl0x.main.command.*;
+import me.tl0x.main.etc.CHelper;
 import me.tl0x.main.etc.based.Command;
 
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ public class CommandRegistry {
 
     public static void init() {
         commands.add(new Toggle());
+        commands.add(new Help());
     }
 
     public static List<Command> getCommands() {
@@ -20,12 +22,7 @@ public class CommandRegistry {
     public static Command getCommandbyTrigger(String query) {
         Command ret = null;
         for (Command c : commands) {
-            for (String alias : c.getAliases()) {
-                if (alias.equalsIgnoreCase(query)) {
-                    ret = c;
-                    break;
-                }
-            }
+            if (c.getDisplayName().equalsIgnoreCase(query)) {ret = c;}
         }
         return ret;
     }
