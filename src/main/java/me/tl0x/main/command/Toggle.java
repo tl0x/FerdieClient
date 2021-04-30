@@ -30,11 +30,11 @@ public class Toggle extends Command {
         m.isEnabled = !m.isEnabled;
         if (m.isEnabled) {
             m.onEnable();
-            CHelper.sendMessage("Toggled" + m.getName() + Formatting.GREEN + " On");
+            CHelper.sendMessage("Toggled " + m.getName() + Formatting.GREEN + " On");
         }
         else {
             m.onDisable();
-            CHelper.sendMessage("Toggled" + m.getName() + Formatting.RED + " Off");
+            CHelper.sendMessage("Toggled " + m.getName() + Formatting.RED + " Off");
         }
 
     }

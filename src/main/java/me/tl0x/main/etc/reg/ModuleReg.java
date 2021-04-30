@@ -1,5 +1,6 @@
 package me.tl0x.main.etc.reg;
 
+import me.tl0x.main.command.Panic;
 import me.tl0x.main.etc.based.Module;
 import me.tl0x.main.modules.*;
 
@@ -16,6 +17,8 @@ public class ModuleReg {
         modules.add(new SpeedMine());
         modules.add(new ClickTP());
         modules.add(new NoFall());
+        modules.add(new Suicide());
+        modules.add(new Disconnect());
     }
 
     public static List<Module> getModules() {

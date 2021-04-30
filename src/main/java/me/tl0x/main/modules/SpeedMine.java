@@ -18,6 +18,7 @@ import net.minecraft.util.shape.VoxelShape;
 public class SpeedMine extends Module {
     public SpeedMine() {super("Speedmine","Makes you mine fast");}
     int maxDistance = 5;
+    public static int speed = 1;
     public boolean enabled = false;
 
     @Override
@@ -38,7 +39,7 @@ public class SpeedMine extends Module {
                     BlockPos pos = ((BlockHitResult) hitResult).getBlockPos();
                     Direction side = ((BlockHitResult) hitResult).getSide();
                     assert MinecraftClient.getInstance().interactionManager != null;
-                    for (int i = 0; i < 2; i++) {
+                    for (int i = 0; i < speed; i++) {
                         MinecraftClient.getInstance().interactionManager.updateBlockBreakingProgress(pos, Direction.UP);
                         MinecraftClient.getInstance().player.swingHand(Hand.MAIN_HAND);
                     }
