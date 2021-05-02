@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "xcarry-tl0x",
+  "version": "${version}",
+  "name": "xcarry",
+  "description": "XCarry mod for stuff (shush man)",
+  "authors": [
+    "tl0x"
+  ],
+  "contributors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/XCarry-tl0x/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "me.tl0x.main.FerdieClient"
+    ],
+    "client": [],
+    "server": []
+  },
+  "mixins": [
+    "XCarry-tl0x.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*"
+  }
+}

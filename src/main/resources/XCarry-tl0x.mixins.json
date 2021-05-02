@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "me.tl0x.main.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "control.ChatHandler",
+    "control.TickMixin",
+    "control.MainMenuMixin",
+    "control.InGameHudMixin"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
