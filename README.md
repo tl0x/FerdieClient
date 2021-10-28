@@ -1,7 +1,7 @@
 # FerdieClient
 
 
-FerdieClient on top 
+FerdieClient
 
 Want the jar file? Build it yourself.
 Go to the project directory using command line and do the command gradlew build
