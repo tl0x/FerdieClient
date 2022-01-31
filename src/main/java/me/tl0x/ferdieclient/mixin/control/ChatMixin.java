@@ -1,6 +1,9 @@
 package me.tl0x.ferdieclient.mixin.control;
 
 
+import me.tl0x.ferdieclient.base.Command;
+import me.tl0x.ferdieclient.helpers.helper;
+import me.tl0x.ferdieclient.reg.CommandReg;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
@@ -17,11 +20,20 @@ public class ChatMixin {
     @Inject(method= "sendMessage(Ljava/lang/String;)V", at=@At("HEAD"),cancellable = true)
     public void onMessagesend(String msg, CallbackInfo ci){
         if (msg.startsWith(".")) {
+            ci.cancel();
             String[] args = msg.toLowerCase().split(" +");
             String command = args[0].substring(1);
-            MinecraftClient.getInstance().player.sendMessage(Text.of("Not sent!"), false);
-            MinecraftClient.getInstance().player.sendMessage(Text.of("You ran the " + command + " command!"), false);
-            ci.cancel();
+
+            Command toRun = CommandReg.getCommandbyName(command);
+            if(toRun == null){
+                helper.sendMessage("You found me");
+            }
+            else {
+                toRun.onExecute(args);
+            }
         }
+
+
+
     }
 }
