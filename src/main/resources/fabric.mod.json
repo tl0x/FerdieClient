@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "xcarry-tl0x",
+  "id": "ferdieclient",
   "version": "${version}",
-  "name": "xcarry",
-  "description": "XCarry mod for stuff (shush man)",
+  "name": "FerdieClient1.18.1",
+  "description": "FerdieClient but for 1.18",
   "authors": [
     "tl0x"
   ],
   "contributors": [],
   "contact": {},
   "license": "MIT",
-  "icon": "assets/XCarry-tl0x/icon.png",
+  "icon": "assets/ferdieclient/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "me.tl0x.main.FerdieClient"
+      "me.tl0x.ferdieclient.FerdieClient"
     ],
     "client": [],
     "server": []
   },
   "mixins": [
-    "XCarry-tl0x.mixins.json"
+    "ferdieclient.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.11.3",
+    "fabricloader": ">=0.11.5",
     "fabric": "*"
   }
 }
