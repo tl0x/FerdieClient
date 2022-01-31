@@ -2,6 +2,7 @@ package me.tl0x.ferdieclient.reg;
 
 import me.tl0x.ferdieclient.base.Command;
 import me.tl0x.ferdieclient.commands.HelpCommand;
+import me.tl0x.ferdieclient.commands.SpamCommand;
 import me.tl0x.ferdieclient.commands.TestCommand;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ public class CommandReg {
     public static void init() {
         commands.add(new TestCommand());
         commands.add(new HelpCommand());
+        commands.add(new SpamCommand());
     }
 
     public static List<Command> getCommands() {

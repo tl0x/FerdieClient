@@ -14,5 +14,6 @@ public class TestCommand extends Command {
     @Override
     public void onExecute(String[] args) {
         helper.sendMessage("Test");
+        MinecraftClient.getInstance().player.sendChatMessage("Amongus");
     }
 }
