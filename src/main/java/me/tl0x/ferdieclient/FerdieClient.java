@@ -1,6 +1,7 @@
 package me.tl0x.ferdieclient;
 
 import me.tl0x.ferdieclient.reg.CommandReg;
+import me.tl0x.ferdieclient.reg.ModuleReg;
 import net.fabricmc.api.ModInitializer;
 
 import org.apache.logging.log4j.Level;
@@ -19,6 +20,9 @@ public class FerdieClient implements ModInitializer {
         log(Level.INFO, "Initializing");
         CommandReg.init();
         log(Level.INFO, "Initializing Commands");
+
+        ModuleReg.init();
+        log(Level.INFO, "Initializing Modules");
         //TODO: Initializer
     }
 

@@ -4,6 +4,7 @@ import me.tl0x.ferdieclient.base.Command;
 import me.tl0x.ferdieclient.commands.HelpCommand;
 import me.tl0x.ferdieclient.commands.SpamCommand;
 import me.tl0x.ferdieclient.commands.TestCommand;
+import me.tl0x.ferdieclient.commands.ToggleCommand;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,7 @@ public class CommandReg {
         commands.add(new TestCommand());
         commands.add(new HelpCommand());
         commands.add(new SpamCommand());
+        commands.add(new ToggleCommand());
     }
 
     public static List<Command> getCommands() {

@@ -1,6 +1,7 @@
 package me.tl0x.ferdieclient.commands;
 
 import me.tl0x.ferdieclient.base.Command;
+import me.tl0x.ferdieclient.helpers.helper;
 import me.tl0x.ferdieclient.reg.ModuleReg;
 import me.tl0x.ferdieclient.base.Module;
 
@@ -14,13 +15,13 @@ public class ToggleCommand extends Command {
 
     @Override
     public void onExecute(String[] args) {
-        Module module;
-        String query = args[1];
-        List<Module> modules= ModuleReg.getModules();
-        for(int i = 0; i < modules.size(); i++) {
-            if (modules.get(i).getName().equalsIgnoreCase(query)) {
-                module = modules.get(i);
-            }
+
+        if (args.length < 2) {
+            helper.sendMessage("Use the correct syntax");
+        } else {
+            String query = args[1];
+            Module module = ModuleReg.getModulebyName(query);
+            module.toggle();
         }
     }
 }

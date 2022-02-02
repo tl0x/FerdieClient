@@ -17,8 +17,15 @@ public class ModuleReg {
         return modules;
     }
 
-    public void toggle(Module m) {
-        m.isEnabled = true;
+    public static Module getModulebyName(String query) {
+        Module m = null;
+        for(int i = 0; i < modules.size(); i++) {
+            if (modules.get(i).getName().equalsIgnoreCase(query)) {
+                m = modules.get(i);
+            }
+        }
+
+        return m;
     }
 
 

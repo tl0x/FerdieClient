@@ -3,7 +3,8 @@
   "package": "me.tl0x.ferdieclient.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "control.ChatMixin"
+    "control.ChatMixin",
+    "control.TickMixin"
   ],
   "client": [],
   "server": [],

@@ -18,6 +18,6 @@ public class HelpCommand extends Command {
         for (int i = 0; i<commands.size(); i++){
             helper.sendMessage(commands.get(i).getName() + ": " + commands.get(i).getDesc());
         }
-
     }
+
 }
