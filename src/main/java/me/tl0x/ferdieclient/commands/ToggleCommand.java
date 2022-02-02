@@ -2,10 +2,8 @@ package me.tl0x.ferdieclient.commands;
 
 import me.tl0x.ferdieclient.base.Command;
 import me.tl0x.ferdieclient.helpers.helper;
-import me.tl0x.ferdieclient.reg.ModuleReg;
+import me.tl0x.ferdieclient.base.reg.ModuleReg;
 import me.tl0x.ferdieclient.base.Module;
-
-import java.util.List;
 
 public class ToggleCommand extends Command {
 

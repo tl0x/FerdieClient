@@ -2,7 +2,7 @@ package me.tl0x.ferdieclient.commands;
 
 import me.tl0x.ferdieclient.base.Command;
 import me.tl0x.ferdieclient.helpers.helper;
-import me.tl0x.ferdieclient.reg.CommandReg;
+import me.tl0x.ferdieclient.base.reg.CommandReg;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package me.tl0x.ferdieclient.reg;
+package me.tl0x.ferdieclient.base.reg;
 
 import me.tl0x.ferdieclient.base.Command;
 import me.tl0x.ferdieclient.commands.HelpCommand;

@@ -1,5 +1,6 @@
-package me.tl0x.ferdieclient.reg;
+package me.tl0x.ferdieclient.base.reg;
 
+import me.tl0x.ferdieclient.modules.GuiModule;
 import me.tl0x.ferdieclient.modules.TestModule;
 import me.tl0x.ferdieclient.base.Module;
 
@@ -10,7 +11,7 @@ public class ModuleReg {
     static List<Module> modules = new ArrayList<>();
 
     public static void init() {
-        modules.add(new TestModule());
+        modules.add(new GuiModule());
     }
 
     public static List<Module> getModules() {

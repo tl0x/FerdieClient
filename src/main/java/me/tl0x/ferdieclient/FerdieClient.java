@@ -1,7 +1,7 @@
 package me.tl0x.ferdieclient;
 
-import me.tl0x.ferdieclient.reg.CommandReg;
-import me.tl0x.ferdieclient.reg.ModuleReg;
+import me.tl0x.ferdieclient.base.reg.CommandReg;
+import me.tl0x.ferdieclient.base.reg.ModuleReg;
 import net.fabricmc.api.ModInitializer;
 
 import org.apache.logging.log4j.Level;

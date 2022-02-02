@@ -3,16 +3,12 @@ package me.tl0x.ferdieclient.mixin.control;
 
 import me.tl0x.ferdieclient.base.Command;
 import me.tl0x.ferdieclient.helpers.helper;
-import me.tl0x.ferdieclient.reg.CommandReg;
-import net.minecraft.client.MinecraftClient;
+import me.tl0x.ferdieclient.base.reg.CommandReg;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import java.util.Locale;
 
 @Mixin(Screen.class)
 public class ChatMixin {

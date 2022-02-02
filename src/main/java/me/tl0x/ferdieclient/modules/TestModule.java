@@ -1,6 +1,7 @@
 package me.tl0x.ferdieclient.modules;
 
 import me.tl0x.ferdieclient.base.Module;
+import me.tl0x.ferdieclient.helpers.Gui.TestGui;
 import me.tl0x.ferdieclient.helpers.events.EventHandler;
 import me.tl0x.ferdieclient.helpers.events.EventType;
 import me.tl0x.ferdieclient.helpers.events.event.PacketEvent;
@@ -11,21 +12,9 @@ import net.minecraft.network.packet.s2c.play.GameMessageS2CPacket;
 import java.util.Locale;
 
 public class TestModule extends Module {
-
-    String word = "hello";
-    int count = 0;
+    int i = 0;
     public TestModule() {
         super("Test","If you see this, I probably forgot to remove it.");
-        EventHandler.registerEventHandler(EventType.PACKET_RECIEVE, event -> {
-            if(!this.isEnabled) {
-                return;
-            }
-            PacketEvent packet = (PacketEvent) event;
-            if(packet.getPacket() instanceof net.minecraft.network.packet.s2c.play.GameMessageS2CPacket p) {
-                String msg = p.getMessage().getString().toLowerCase();
-                helper.sendMessage(msg);
-            }
-        });
     }
 
     @Override
@@ -35,12 +24,18 @@ public class TestModule extends Module {
 
     @Override
     public void onTick() {
+
+        i++;
+        if (i>20) {
+            i = 0;
+            MinecraftClient.getInstance().setScreen(new TestGui());
+            this.toggle();
+        }
         super.onTick();
     }
 
     @Override
     public void onDisable() {
-        helper.sendMessage(Integer.toString(count));
         super.onDisable();
     }
 
