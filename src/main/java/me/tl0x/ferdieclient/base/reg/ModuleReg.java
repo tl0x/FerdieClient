@@ -1,7 +1,6 @@
 package me.tl0x.ferdieclient.base.reg;
 
-import me.tl0x.ferdieclient.modules.GuiModule;
-import me.tl0x.ferdieclient.modules.TestModule;
+import me.tl0x.ferdieclient.base.modules.GuiModule;
 import me.tl0x.ferdieclient.base.Module;
 
 import java.util.ArrayList;

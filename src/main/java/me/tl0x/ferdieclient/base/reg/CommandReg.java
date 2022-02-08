@@ -1,10 +1,10 @@
 package me.tl0x.ferdieclient.base.reg;
 
 import me.tl0x.ferdieclient.base.Command;
-import me.tl0x.ferdieclient.commands.HelpCommand;
-import me.tl0x.ferdieclient.commands.SpamCommand;
-import me.tl0x.ferdieclient.commands.TestCommand;
-import me.tl0x.ferdieclient.commands.ToggleCommand;
+import me.tl0x.ferdieclient.base.commands.HelpCommand;
+import me.tl0x.ferdieclient.base.commands.SpamCommand;
+import me.tl0x.ferdieclient.base.commands.TestCommand;
+import me.tl0x.ferdieclient.base.commands.ToggleCommand;
 
 import java.util.ArrayList;
 import java.util.List;

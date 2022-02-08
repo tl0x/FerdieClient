@@ -19,4 +19,12 @@ public class EventHandler {
         Handler.get(eventType).add(handler);
     }
 
+    public static boolean fireEvent(EventType event, Event e) {
+        if (Handler.containsKey(event)) {
+            for (Consumer<Event> handler: Handler.get(event)) {
+                handler.accept(e);
+            }
+        }
+        return e.getCancelled();
+    }
 }

@@ -1,15 +1,8 @@
-package me.tl0x.ferdieclient.modules;
+package me.tl0x.ferdieclient.base.modules;
 
 import me.tl0x.ferdieclient.base.Module;
 import me.tl0x.ferdieclient.helpers.Gui.TestGui;
-import me.tl0x.ferdieclient.helpers.events.EventHandler;
-import me.tl0x.ferdieclient.helpers.events.EventType;
-import me.tl0x.ferdieclient.helpers.events.event.PacketEvent;
-import me.tl0x.ferdieclient.helpers.helper;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.network.packet.s2c.play.GameMessageS2CPacket;
-
-import java.util.Locale;
 
 public class TestModule extends Module {
     int i = 0;

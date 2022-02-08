@@ -5,7 +5,8 @@
   "mixins": [
     "control.ChatMixin",
     "control.TickMixin",
-    "control.InGameGuiMixin"
+    "control.InGameGuiMixin",
+    "control.MouseMixin"
   ],
   "client": [],
   "server": [],

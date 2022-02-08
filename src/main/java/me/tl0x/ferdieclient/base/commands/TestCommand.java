@@ -1,9 +1,8 @@
-package me.tl0x.ferdieclient.commands;
+package me.tl0x.ferdieclient.base.commands;
 
 import me.tl0x.ferdieclient.base.Command;
 import me.tl0x.ferdieclient.helpers.helper;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.text.Text;
 
 public class TestCommand extends Command {
 
