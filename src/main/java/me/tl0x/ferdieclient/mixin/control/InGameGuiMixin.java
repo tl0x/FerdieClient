@@ -33,7 +33,7 @@ public abstract class InGameGuiMixin {
             MinecraftClient.getInstance().textRenderer.draw(matrices, Text.of("FerdieClient"), 8, scaledHeight-235, 16733525);
             for(int i = 0; i < ModuleReg.getModules().size(); i++) {
                 if (ModuleReg.getModules().get(i).isEnabled) {
-                    MinecraftClient.getInstance().textRenderer.draw(matrices, Text.of(ModuleReg.getModules().get(i).getName()), 8, scaledHeight-228 + x, 3633115);
+                    MinecraftClient.getInstance().textRenderer.draw(matrices, Text.of(ModuleReg.getModules().get(i).getName()), 8, scaledHeight-220 + x, 3633115);
                     x += 10;
                 }
             }
