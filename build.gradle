@@ -13,13 +13,22 @@ group = project.maven_group
 minecraft {
 }
 
+repositories {
+	maven {
+		name 'JitPack'
+		url "https://jitpack.io"
+	}
+}
+
 dependencies {
 	//to change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+	implementation('com.github.jagrosh:DiscordIPC:e29d6d8') {
+		exclude module: 'log4j'
+	}
 }
 
 processResources {
@@ -70,5 +79,6 @@ publishing {
 	repositories {
 		// uncomment to publish to the local maven
 		// mavenLocal()
+
 	}
 }

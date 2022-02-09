@@ -1,5 +1,9 @@
 package me.tl0x.ferdieclient;
 
+import com.jagrosh.discordipc.IPCClient;
+import com.jagrosh.discordipc.IPCListener;
+import com.jagrosh.discordipc.entities.RichPresence;
+import com.jagrosh.discordipc.exceptions.NoDiscordClientException;
 import me.tl0x.ferdieclient.base.reg.CommandReg;
 import me.tl0x.ferdieclient.base.reg.ModuleReg;
 import net.fabricmc.api.ModInitializer;
@@ -8,6 +12,8 @@ import net.minecraft.client.MinecraftClient;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.time.OffsetDateTime;
 
 public class FerdieClient implements ModInitializer {
 
@@ -26,6 +32,23 @@ public class FerdieClient implements ModInitializer {
         ModuleReg.init();
         log(Level.INFO, "Initializing Modules");
         //TODO: Initializer
+        IPCClient client = new IPCClient(940786718594969662L);
+        client.setListener(new IPCListener() {
+            @Override
+            public void onReady(IPCClient client) {
+                RichPresence.Builder builder = new RichPresence.Builder();
+                builder.setState("Ferdie Client");
+                builder.setLargeImage("freddiedonut");
+                builder.setStartTimestamp(OffsetDateTime.now());
+                builder.setDetails("FERDIECLIENT ON TOP");
+                client.sendRichPresence(builder.build());
+            }
+        });
+        try {
+            client.connect();
+        } catch (Exception e) {
+            log(Level.INFO, "An error occured when starting RPC");
+        }
     }
 
     public static void log(Level level, String message){
