@@ -2,25 +2,25 @@ package me.tl0x.ferdieclient.base.modules;
 
 import me.tl0x.ferdieclient.base.Module;
 
-import me.tl0x.ferdieclient.helpers.helper;
-import net.minecraft.entity.player.PlayerEntity;
+public class Hud extends Module {
 
 
-public class TestModule extends Module {
-
-
-    public TestModule() {
-        super("Test","If you see this, I probably forgot to remove it.");
+    public static boolean enabled = false;
+    public Hud() {
+        super("Hud","Enables or Disables the in game HUD.");
     }
 
     @Override
     public void onEnable() {
         super.onEnable();
     }
+    @Override
+    public void onTick() {
+        super.onTick();
+    }
 
     @Override
     public void onDisable() {
         super.onDisable();
     }
-
 }

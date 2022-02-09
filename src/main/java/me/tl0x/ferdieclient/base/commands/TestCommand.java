@@ -13,6 +13,13 @@ public class TestCommand extends Command {
     @Override
     public void onExecute(String[] args) {
         helper.sendMessage("Test");
-        MinecraftClient.getInstance().player.sendChatMessage("Amongus");
+        if (args.length < 3) return;
+        else {
+            try {
+                helper.swapSlots(Integer.parseInt(args[1]), Integer.parseInt(args[2]));
+            } catch (Exception e) {
+                helper.sendMessage("did you do somtehing wrong?");
+            }
+        }
     }
 }
