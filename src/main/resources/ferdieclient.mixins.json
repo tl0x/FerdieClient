@@ -7,7 +7,8 @@
     "control.TickMixin",
     "control.InGameGuiMixin",
     "control.MouseMixin",
-    "control.PlayerEntityMixin"
+    "control.PlayerEntityMixin",
+    "control.ClientConnectionMixin"
   ],
   "client": [],
   "server": [],

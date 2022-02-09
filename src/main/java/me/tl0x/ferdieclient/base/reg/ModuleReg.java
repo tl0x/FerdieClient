@@ -1,10 +1,7 @@
 package me.tl0x.ferdieclient.base.reg;
 
-import me.tl0x.ferdieclient.base.modules.FakeHackerModule;
-import me.tl0x.ferdieclient.base.modules.Hud;
+import me.tl0x.ferdieclient.base.modules.*;
 import me.tl0x.ferdieclient.base.Module;
-import me.tl0x.ferdieclient.base.modules.SpeedMineModule;
-import me.tl0x.ferdieclient.base.modules.SpeedModule;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +14,7 @@ public class ModuleReg {
         modules.add(new Hud());
         modules.add(new SpeedMineModule());
         modules.add(new SpeedModule());
+        modules.add(new XCarryModule());
     }
 
     public static List<Module> getModules() {
