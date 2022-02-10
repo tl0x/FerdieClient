@@ -3,9 +3,6 @@
 
 FerdieClient
 
-Want the jar file? Build it yourself.
-Go to the project directory using command line and do the command gradlew build
+Want the jar file? You can either build it yourself or go to the "build" folder.
 
-find in builds/libs
-
-1.16.5 fabric, too lazy to update
+Additionally, if you want the 1.18 version, go to the 1.18 branch. First stable build of 1.18 coming soon.
