@@ -1,6 +1,7 @@
 package me.tl0x.ferdieclient.base.modules;
 
 import me.tl0x.ferdieclient.FerdieClient;
+import me.tl0x.ferdieclient.base.Keybind;
 import me.tl0x.ferdieclient.base.Module;
 import me.tl0x.ferdieclient.helpers.events.EventHandler;
 import me.tl0x.ferdieclient.helpers.events.EventType;
@@ -25,7 +26,7 @@ public class FakeHackerModule extends Module{
     PlayerEntity player = null;
 
     public FakeHackerModule() {
-        super("FakeHacker","r");
+        super("FakeHacker","r", new Keybind(-1));
         EventHandler.registerEventHandler(EventType.MOUSE_EVENT, event -> {
             if (!this.isEnabled) {
                 return;

@@ -1,5 +1,6 @@
 package me.tl0x.ferdieclient.base.modules;
 
+import me.tl0x.ferdieclient.base.Keybind;
 import me.tl0x.ferdieclient.base.Module;
 
 import me.tl0x.ferdieclient.helpers.helper;
@@ -10,7 +11,7 @@ public class TestModule extends Module {
 
 
     public TestModule() {
-        super("Test","If you see this, I probably forgot to remove it.");
+        super("Test","If you see this, I probably forgot to remove it.",new Keybind(-1));
     }
 
     @Override

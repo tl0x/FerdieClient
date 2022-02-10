@@ -37,10 +37,10 @@ public class FerdieClient implements ModInitializer {
             @Override
             public void onReady(IPCClient client) {
                 RichPresence.Builder builder = new RichPresence.Builder();
-                builder.setState("Ferdie Client");
+                builder.setState("https://github.com/tl0x");
                 builder.setLargeImage("freddiedonut");
                 builder.setStartTimestamp(OffsetDateTime.now());
-                builder.setDetails("FERDIECLIENT ON TOP");
+                builder.setDetails("FerdieClient (1.18) 1.0.0");
                 client.sendRichPresence(builder.build());
             }
         });

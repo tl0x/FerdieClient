@@ -12,17 +12,6 @@ public class ToggleCommand extends Command {
         super("toggle","toggles a module",new String[]{});
     }
 
-    public static void toggle(Module m) {
-        if (!m.isEnabled) {
-            helper.sendMessage("Toggled " + m.getName() + Formatting.GREEN + " On");
-            m.isEnabled = true;
-            m.onEnable();
-        } else {
-            helper.sendMessage("Toggled " + m.getName() + Formatting.RED + " Off");
-            m.isEnabled = false;
-            m.onDisable();
-        }
-    }
 
     @Override
     public void onExecute(String[] args) {
@@ -37,7 +26,7 @@ public class ToggleCommand extends Command {
                 helper.sendMessage("Invalid Module!");
                 return;
             }
-            toggle(module);
+            Module.toggle(module);
         }
     }
 }

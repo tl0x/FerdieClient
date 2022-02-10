@@ -1,13 +1,14 @@
 package me.tl0x.ferdieclient.base.modules;
 
+import me.tl0x.ferdieclient.base.Keybind;
 import me.tl0x.ferdieclient.base.Module;
 
-public class Hud extends Module {
+public class HudModule extends Module {
 
 
     public static boolean enabled = false;
-    public Hud() {
-        super("Hud","Enables or Disables the in game HUD.");
+    public HudModule() {
+        super("Hud","Enables or Disables the in game HUD.", new Keybind(-1));
     }
 
     @Override

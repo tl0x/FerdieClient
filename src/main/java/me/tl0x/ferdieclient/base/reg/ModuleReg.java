@@ -10,11 +10,13 @@ public class ModuleReg {
     static List<Module> modules = new ArrayList<>();
 
     public static void init() {
+        modules.add(new ClickGuiModule());
         modules.add(new FakeHackerModule());
-        modules.add(new Hud());
+        modules.add(new HudModule());
         modules.add(new SpeedMineModule());
         modules.add(new SpeedModule());
         modules.add(new XCarryModule());
+        modules.add(new MuteChatModule());
     }
 
     public static List<Module> getModules() {

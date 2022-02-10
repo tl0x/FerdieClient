@@ -14,7 +14,7 @@ public class TestGui extends Screen {
 
     @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
-        DrawableHelper.fill(matrices,5,5,10,10, Color.RED.getRGB());
+        DrawableHelper.fill(matrices,0,0,width,height, Color.RED.getRGB());
         super.render(matrices, mouseX, mouseY, delta);
     }
 }

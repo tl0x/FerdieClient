@@ -1,6 +1,7 @@
 package me.tl0x.ferdieclient.base.modules;
 
 import me.tl0x.ferdieclient.FerdieClient;
+import me.tl0x.ferdieclient.base.Keybind;
 import me.tl0x.ferdieclient.base.Module;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
@@ -12,7 +13,7 @@ public class SpeedMineModule extends Module {
     public int speed = 2;
 
     public SpeedMineModule() {
-        super("Speedmine", "Makes you mine fast using packets");
+        super("Speedmine", "Makes you mine fast using packets", new Keybind(-1));
     }
 
     @Override

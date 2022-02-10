@@ -1,6 +1,7 @@
 package me.tl0x.ferdieclient.base.modules;
 
 import me.tl0x.ferdieclient.FerdieClient;
+import me.tl0x.ferdieclient.base.Keybind;
 import me.tl0x.ferdieclient.base.Module;
 import me.tl0x.ferdieclient.helpers.events.EventHandler;
 import me.tl0x.ferdieclient.helpers.events.EventType;
@@ -14,7 +15,7 @@ public class XCarryModule extends Module {
     public boolean invOpened = false;
 
     public XCarryModule() {
-        super("XCarry", "Allows you to use crafting table as slots for inventory");
+        super("XCarry", "Allows you to use crafting table as slots for inventory", new Keybind(-1));
         EventHandler.registerEventHandler(EventType.PACKET_SEND, event -> {
             if (!this.isEnabled) {
                 return;
@@ -25,7 +26,6 @@ public class XCarryModule extends Module {
                     if (((CloseHandledScreenC2SPacket) e.getPacket()).getSyncId() == FerdieClient.client.player.currentScreenHandler.syncId) {
                         e.setCancelled(true);
                         invOpened = true;
-                        helper.sendMessage("event called");
                     }
                 }
             }
