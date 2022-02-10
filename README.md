@@ -1,7 +1,7 @@
 # FerdieClient
 
 
-FerdieClient
+FerdieClient: Personal project to make mediocre block game cheats (Minecraft)
 
 Want the jar file? You can either build it yourself or go to the "build" folder.
 
