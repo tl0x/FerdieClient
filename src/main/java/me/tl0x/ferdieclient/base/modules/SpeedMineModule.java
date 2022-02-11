@@ -13,7 +13,7 @@ public class SpeedMineModule extends Module {
     public int speed = 2;
 
     public SpeedMineModule() {
-        super("Speedmine", "Makes you mine fast using packets", new Keybind(-1));
+        super("Speedmine", "Makes you mine fast using packets");
     }
 
     @Override

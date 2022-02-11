@@ -32,7 +32,7 @@ public class ModuleReg {
     }
 
     public static Module getModulebyClass(Class clazz) {
-        for (Module c: modules ){
+        for (Module c: modules){
             if (c.getClass() == clazz) {
                 return c;
             }

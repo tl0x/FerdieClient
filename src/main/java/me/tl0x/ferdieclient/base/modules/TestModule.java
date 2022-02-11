@@ -11,7 +11,7 @@ public class TestModule extends Module {
 
 
     public TestModule() {
-        super("Test","If you see this, I probably forgot to remove it.",new Keybind(-1));
+        super("Test","If you see this, I probably forgot to remove it.");
     }
 
     @Override

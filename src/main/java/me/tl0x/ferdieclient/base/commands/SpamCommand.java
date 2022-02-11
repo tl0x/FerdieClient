@@ -7,7 +7,7 @@ import net.minecraft.client.MinecraftClient;
 public class SpamCommand extends Command {
 
     public SpamCommand() {
-        super("spam","Spams a specified message. Usage: .spam msg count", new String[]{});
+        super("spam","Spams a specified message. Usage: .spam msg count delay(ms)", new String[]{});
     }
 
     @Override
@@ -25,6 +25,7 @@ public class SpamCommand extends Command {
                 else {
                     for (int i = 0; i < count; i++) {
                         MinecraftClient.getInstance().player.sendChatMessage(msg);
+                        helper.wait(Integer.parseInt(args[3]));
                     }
                 }
             } catch(Exception e) {

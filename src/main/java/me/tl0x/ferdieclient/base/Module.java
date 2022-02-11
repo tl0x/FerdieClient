@@ -1,5 +1,7 @@
 package me.tl0x.ferdieclient.base;
 
+import me.tl0x.ferdieclient.base.modules.ModuleType;
+import me.tl0x.ferdieclient.helpers.events.EventType;
 import me.tl0x.ferdieclient.helpers.helper;
 import net.minecraft.util.Formatting;
 
@@ -7,13 +9,14 @@ public class Module {
     String name;
     String description;
     public boolean isEnabled = false;
-    Keybind keybind = new Keybind(-1);
+    public Keybind keybind = new Keybind(-1);
+    public ModuleType moduleType = ModuleType.MODULETYPE_UNKNOWN;
 
-    public Module(String name, String description, Keybind keybind) {
+    public Module(String name, String description) {
         this.name = name;
         this.description = description;
-        this.keybind = keybind;
     }
+
 
     public String getName() {
         return name;
@@ -27,6 +30,14 @@ public class Module {
         return keybind;
     }
 
+    public ModuleType getModuleType() {
+        return moduleType;
+    }
+
+    public void setModuleType(ModuleType m) {
+        this.moduleType = m;
+    }
+
     public void onEnable() {
 
     }
@@ -37,6 +48,10 @@ public class Module {
 
     public void onTick() {
 
+    }
+
+    public void setKeybind(int keyCode) {
+        this.keybind = new Keybind(keyCode);
     }
 
     public static void toggle(Module m) {

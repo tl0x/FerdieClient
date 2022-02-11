@@ -15,7 +15,7 @@ public class XCarryModule extends Module {
     public boolean invOpened = false;
 
     public XCarryModule() {
-        super("XCarry", "Allows you to use crafting table as slots for inventory", new Keybind(-1));
+        super("XCarry", "Allows you to use crafting table as slots for inventory");
         EventHandler.registerEventHandler(EventType.PACKET_SEND, event -> {
             if (!this.isEnabled) {
                 return;

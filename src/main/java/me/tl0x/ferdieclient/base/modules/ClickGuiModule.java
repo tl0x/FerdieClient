@@ -1,24 +1,19 @@
 package me.tl0x.ferdieclient.base.modules;
 
 import me.tl0x.ferdieclient.FerdieClient;
-import me.tl0x.ferdieclient.base.Keybind;
 import me.tl0x.ferdieclient.base.Module;
-import me.tl0x.ferdieclient.helpers.Gui.TestGui;
-import me.tl0x.ferdieclient.helpers.events.EventHandler;
-import me.tl0x.ferdieclient.helpers.events.EventType;
-import me.tl0x.ferdieclient.helpers.events.event.KeyboardEvent;
-import me.tl0x.ferdieclient.helpers.helper;
-import net.minecraft.client.Keyboard;
+import me.tl0x.ferdieclient.helpers.Gui.clickgui.ClickGui;
 
 public class ClickGuiModule extends Module {
 
     public ClickGuiModule() {
-        super("ClickGui", "Gui to activate and edit modules", new Keybind(344));
+        super("ClickGui", "Gui to activate and edit modules");
+        setModuleType(ModuleType.MODULETYPE_UTIL);
     }
 
     @Override
     public void onEnable() {
-        FerdieClient.client.setScreen(new TestGui());
+        FerdieClient.client.setScreen(new ClickGui());
         Module.toggle(this);
         super.onEnable();
     }

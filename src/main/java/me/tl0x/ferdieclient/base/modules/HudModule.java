@@ -8,7 +8,7 @@ public class HudModule extends Module {
 
     public static boolean enabled = false;
     public HudModule() {
-        super("Hud","Enables or Disables the in game HUD.", new Keybind(-1));
+        super("Hud","Enables or Disables the in game HUD.");
     }
 
     @Override

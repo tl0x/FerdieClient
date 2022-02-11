@@ -1,17 +1,15 @@
 package me.tl0x.ferdieclient.base.commands;
 
 import me.tl0x.ferdieclient.base.Command;
-import me.tl0x.ferdieclient.base.Module;
-import me.tl0x.ferdieclient.base.reg.ModuleReg;
 import me.tl0x.ferdieclient.helpers.helper;
 import me.tl0x.ferdieclient.base.reg.CommandReg;
 
 import java.util.List;
 
-public class HelpCommand extends Command {
+public class CommandsCommand extends Command {
 
-    public HelpCommand() {
-        super("Help", "Brings out the list of commands", new String[]{"h"});
+    public CommandsCommand() {
+        super("Commands", "Brings out the list of commands", new String[]{"c"});
     }
 
     @Override

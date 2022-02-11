@@ -26,7 +26,7 @@ public class FakeHackerModule extends Module{
     PlayerEntity player = null;
 
     public FakeHackerModule() {
-        super("FakeHacker","r", new Keybind(-1));
+        super("FakeHacker","r");
         EventHandler.registerEventHandler(EventType.MOUSE_EVENT, event -> {
             if (!this.isEnabled) {
                 return;

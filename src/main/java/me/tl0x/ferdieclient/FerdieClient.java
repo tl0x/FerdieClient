@@ -4,6 +4,7 @@ import com.jagrosh.discordipc.IPCClient;
 import com.jagrosh.discordipc.IPCListener;
 import com.jagrosh.discordipc.entities.RichPresence;
 import com.jagrosh.discordipc.exceptions.NoDiscordClientException;
+import me.tl0x.ferdieclient.base.modules.ClickGuiModule;
 import me.tl0x.ferdieclient.base.reg.CommandReg;
 import me.tl0x.ferdieclient.base.reg.ModuleReg;
 import net.fabricmc.api.ModInitializer;
@@ -14,6 +15,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.time.OffsetDateTime;
+import me.tl0x.ferdieclient.base.Module;
 
 public class FerdieClient implements ModInitializer {
 
@@ -30,6 +32,11 @@ public class FerdieClient implements ModInitializer {
         log(Level.INFO, "Initializing Commands");
 
         ModuleReg.init();
+
+        Module m = ModuleReg.getModulebyClass(ClickGuiModule.class);
+        m.setKeybind(344);
+
+
         log(Level.INFO, "Initializing Modules");
         //TODO: Initializer
         IPCClient client = new IPCClient(940786718594969662L);

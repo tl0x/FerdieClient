@@ -17,6 +17,9 @@ public class PlayerEntityMixin {
     public void getMovementSpeed(CallbackInfoReturnable<Float> cir) {
         Module m = ModuleReg.getModulebyName("Speed");
         if (m.isEnabled && FerdieClient.client.player != null && FerdieClient.client.world != null) {
+            if (FerdieClient.client.player.isSneaking()) {
+                cir.setReturnValue(SpeedModule.sneakingSpeed);
+            }
             cir.setReturnValue(SpeedModule.speed);
         }
     }

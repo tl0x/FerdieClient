@@ -6,9 +6,10 @@ import me.tl0x.ferdieclient.base.Module;
 public class SpeedModule extends Module {
 
     public static float speed = 2.5f;
+    public static float sneakingSpeed = 1.5f;
 
     public SpeedModule() {
-        super("Speed", "Makes you fast", new Keybind(-1));
+        super("Speed", "Makes you fast");
     }
 
     @Override
