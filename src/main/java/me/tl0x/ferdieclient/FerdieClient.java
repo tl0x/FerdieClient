@@ -1,9 +1,5 @@
 package me.tl0x.ferdieclient;
 
-import com.jagrosh.discordipc.IPCClient;
-import com.jagrosh.discordipc.IPCListener;
-import com.jagrosh.discordipc.entities.RichPresence;
-import com.jagrosh.discordipc.exceptions.NoDiscordClientException;
 import me.tl0x.ferdieclient.base.modules.ClickGuiModule;
 import me.tl0x.ferdieclient.base.reg.CommandReg;
 import me.tl0x.ferdieclient.base.reg.ConfigHandler;
@@ -47,23 +43,23 @@ public class FerdieClient implements ModInitializer {
 
         log(Level.INFO, "Initializing Modules");
         //TODO: Initializer
-        IPCClient client = new IPCClient(940786718594969662L);
-        client.setListener(new IPCListener() {
-            @Override
-            public void onReady(IPCClient client) {
-                RichPresence.Builder builder = new RichPresence.Builder();
-                builder.setState("https://github.com/tl0x");
-                builder.setLargeImage("freddiedonut");
-                builder.setStartTimestamp(OffsetDateTime.now());
-                builder.setDetails("FerdieClient (1.18) 1.0.0");
-                client.sendRichPresence(builder.build());
-            }
-        });
-        try {
-            client.connect();
-        } catch (Exception e) {
-            log(Level.INFO, "An error occured when starting RPC");
-        }
+//        IPCClient client = new IPCClient(940786718594969662L);
+//        client.setListener(new IPCListener() {
+//            @Override
+//            public void onReady(IPCClient client) {
+//                RichPresence.Builder builder = new RichPresence.Builder();
+//                builder.setState("https://github.com/tl0x");
+//                builder.setLargeImage("freddiedonut");
+//                builder.setStartTimestamp(OffsetDateTime.now());
+//                builder.setDetails("FerdieClient (1.18) 1.0.0");
+//                client.sendRichPresence(builder.build());
+//            }
+//        });
+//        try {
+//            client.connect();
+//        } catch (Exception e) {
+//            log(Level.INFO, "An error occured when starting RPC");
+//        }
 
         if (SAVE.exists() && !SAVE.isDirectory()) {
             SAVE.delete();
