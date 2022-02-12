@@ -2,7 +2,8 @@
 
 Welcome to the 1.18 Branch. Here are all the "Working" features.
 
-First build coming soon.
+First build out!
+
 
 Commands:
 
@@ -37,5 +38,5 @@ XCarry: Allows you to use crafting slots as inventory
 Planned Features:
 
 - Fix ClickGui
-- Configs
+- Module Configs
 - More modules idk
