@@ -4,12 +4,14 @@
   "compatibilityLevel": "JAVA_16",
   "mixins": [
     "control.ChatMixin",
-    "control.TickMixin",
+    "control.ClientConnectionMixin",
     "control.InGameGuiMixin",
+    "control.KeyboardMixin",
+    "control.MinecraftClientMixin",
     "control.MouseMixin",
     "control.PlayerEntityMixin",
-    "control.ClientConnectionMixin",
-    "control.KeyboardMixin"
+    "control.TickMixin",
+    "control.ClientPlayerEntityMixin"
   ],
   "client": [],
   "server": [],

@@ -1,5 +1,6 @@
 package me.tl0x.ferdieclient.helpers.Gui.clickgui;
 
+import com.google.gson.JsonArray;
 import me.tl0x.ferdieclient.FerdieClient;
 import me.tl0x.ferdieclient.helpers.render.Renderer;
 import net.minecraft.client.gui.DrawableHelper;
@@ -17,7 +18,7 @@ public class ClickGui extends Screen {
     @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
         Color color = new Color(255,255,255);
-        Renderer.renderRoundedQuadInternal(matrices.peek().getPositionMatrix(),255f,255f,255f,0.5f,0,0,width,height,10,5);
+        DrawableHelper.fill(matrices, 100, 100, (int) 0.35*width, (int) 0.35*height, color.getRGB());
         super.render(matrices, mouseX, mouseY, delta);
     }
 }
