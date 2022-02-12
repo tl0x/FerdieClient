@@ -15,7 +15,7 @@ public class ChatMixin {
 
     @Inject(method= "sendMessage(Ljava/lang/String;)V", at=@At("HEAD"),cancellable = true)
     public void onMessagesend(String msg, CallbackInfo ci){
-        if (msg.startsWith(".")) {
+        if (msg.startsWith("@")) {
             ci.cancel();
             String[] args = msg.toLowerCase().split(" +");
             String command = args[0].substring(1);

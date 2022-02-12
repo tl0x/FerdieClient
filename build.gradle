@@ -24,11 +24,12 @@ dependencies {
 	//to change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-	implementation('com.github.jagrosh:DiscordIPC:e29d6d8') {
-		exclude module: 'log4j'
-	}
+	modImplementation("net.fabricmc:fabric-loader:${project.loader_version}")
+
+
+	include(modImplementation("org.json:json:20211205"))
+	// include(modImplementation("net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"))
+	include(modImplementation('com.github.jagrosh:DiscordIPC:e29d6d8'))
 }
 
 processResources {
