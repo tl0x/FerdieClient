@@ -1,12 +1,42 @@
 # FerdieClient
 
+Welcome to the 1.18 Branch. Here are all the "Working" features.
 
-FerdieClient: Personal project to make mediocre block game cheats (Minecraft)
+First build out!
 
-Want the jar file? You can either build it yourself or go to the "build" folder.
 
-Additionally, if you want the 1.18 version, go to the 1.18 branch. First stable build of 1.18 coming soon.
+Commands:
 
-Not sure if this mod's compatibility with other clients/mods. You'll have to do some testing
+Bind: Binds a key to a module (Activate by pressing it)
 
-requires fabric api
+Commands: Prints a list of commands and their description
+
+Modules: Prints a list of modules and their description
+
+Spam: Spams a specified message with a delay (.spam msg count delay(ms)) Max messages is 200
+
+Toggle: Toggles a module on or off
+
+
+Modules:
+
+ClickGui: Doesn't work rn
+
+FakeHacker: Makes a player look like they're hacking. Middle click on a player to activate.
+
+Hud: Activates the Hud.
+
+MuteChat: Mutes the chat
+
+SpeedMine: Makes you mine faster using packets
+
+SpeedModule: Makes you fast
+
+XCarry: Allows you to use crafting slots as inventory
+
+
+Planned Features:
+
+- Fix ClickGui
+- Module Configs
+- More modules idk

@@ -1,10 +1,10 @@
 plugins {
-	id 'fabric-loom' version '0.5-SNAPSHOT'
+	id 'fabric-loom' version '0.10-SNAPSHOT'
 	id 'maven-publish'
 }
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_16
+targetCompatibility = JavaVersion.VERSION_16
 
 archivesBaseName = project.archives_base_name
 version = project.mod_version
@@ -13,25 +13,29 @@ group = project.maven_group
 minecraft {
 }
 
+repositories {
+	maven {
+		name 'JitPack'
+		url "https://jitpack.io"
+	}
+}
+
 dependencies {
 	//to change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+	implementation('com.github.jagrosh:DiscordIPC:e29d6d8') {
+		exclude module: 'log4j'
+	}
 }
 
 processResources {
 	inputs.property "version", project.version
 
-	from(sourceSets.main.resources.srcDirs) {
-		include "fabric.mod.json"
+	filesMatching("fabric.mod.json") {
 		expand "version": project.version
-	}
-
-	from(sourceSets.main.resources.srcDirs) {
-		exclude "fabric.mod.json"
 	}
 }
 
@@ -75,5 +79,6 @@ publishing {
 	repositories {
 		// uncomment to publish to the local maven
 		// mavenLocal()
+
 	}
 }

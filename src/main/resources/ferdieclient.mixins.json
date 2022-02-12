@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "package": "me.tl0x.ferdieclient.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "control.ChatMixin",
+    "control.ClientConnectionMixin",
+    "control.InGameGuiMixin",
+    "control.KeyboardMixin",
+    "control.MinecraftClientMixin",
+    "control.MouseMixin",
+    "control.PlayerEntityMixin",
+    "control.TickMixin",
+    "control.ClientPlayerEntityMixin"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
