@@ -15,8 +15,6 @@ import java.util.Scanner;
 
 public class ConfigHandler {
 
-    Gson gson = new Gson();
-
     public static void initFile() {
         File CONFIG_FILE = new File(FerdieClient.SAVE, "config.txt");
         try {
