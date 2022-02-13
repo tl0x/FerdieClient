@@ -11,7 +11,8 @@
     "control.MouseMixin",
     "control.PlayerEntityMixin",
     "control.TickMixin",
-    "control.ClientPlayerEntityMixin"
+    "control.ClientPlayerEntityMixin",
+    "control.ShulkerBoxScreenMixin"
   ],
   "client": [],
   "server": [],

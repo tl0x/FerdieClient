@@ -1,7 +1,14 @@
 package me.tl0x.ferdieclient.helpers;
 
+import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import me.tl0x.ferdieclient.FerdieClient;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.screen.ingame.ShulkerBoxScreen;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.Packet;
+import net.minecraft.network.packet.c2s.play.ClickSlotC2SPacket;
+import net.minecraft.screen.ShulkerBoxScreenHandler;
 import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -34,6 +41,20 @@ public class helper {
             Thread.sleep(ms);
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void quickMove(int slot) {
+        if (FerdieClient.client.player.currentScreenHandler instanceof ShulkerBoxScreenHandler) {
+            ShulkerBoxScreenHandler sh = (ShulkerBoxScreenHandler) FerdieClient.client.player.currentScreenHandler;
+            Int2ObjectArrayMap<ItemStack> stack = new Int2ObjectArrayMap();
+            stack.put(slot, sh.getSlot(slot).getStack());
+            FerdieClient.client.getNetworkHandler().sendPacket((Packet) new ClickSlotC2SPacket(sh.syncId, 0, slot, 0, SlotActionType.QUICK_MOVE, sh.getSlot(slot).getStack(), (Int2ObjectMap) stack));
+        }
+    }
+    public static void quickMoveAll() {
+        for(int i = 0; i < 27; i++) {
+            quickMove(i);
         }
     }
 }

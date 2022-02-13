@@ -11,6 +11,7 @@ public class ModuleReg {
 
     public static void init() {
         modules.add(new ClickGuiModule());
+        modules.add(new DupeModule());
         modules.add(new FakeHackerModule());
         modules.add(new HudModule());
         modules.add(new SpeedMineModule());
