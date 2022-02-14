@@ -1,8 +1,10 @@
-package me.tl0x.ferdieclient.base.modules;
+package me.tl0x.ferdieclient.base.modules.util;
 
 import me.tl0x.ferdieclient.FerdieClient;
 import me.tl0x.ferdieclient.base.Module;
+import me.tl0x.ferdieclient.base.modules.ModuleType;
 import me.tl0x.ferdieclient.helpers.Gui.clickgui.ClickGui;
+import net.minecraft.client.gui.screen.Screen;
 
 public class ClickGuiModule extends Module {
 
@@ -13,8 +15,8 @@ public class ClickGuiModule extends Module {
 
     @Override
     public void onEnable() {
-        FerdieClient.client.setScreen(new ClickGui());
+        Screen ClickGui = new ClickGui();
+        FerdieClient.client.setScreen(ClickGui);
         Module.toggle(this);
-        super.onEnable();
     }
 }

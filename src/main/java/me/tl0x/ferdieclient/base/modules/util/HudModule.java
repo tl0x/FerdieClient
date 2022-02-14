@@ -1,4 +1,4 @@
-package me.tl0x.ferdieclient.base.modules;
+package me.tl0x.ferdieclient.base.modules.util;
 
 import me.tl0x.ferdieclient.base.Keybind;
 import me.tl0x.ferdieclient.base.Module;

@@ -1,6 +1,7 @@
 package me.tl0x.ferdieclient.base;
 
 import me.tl0x.ferdieclient.base.modules.ModuleType;
+import me.tl0x.ferdieclient.base.modules.util.ClickGuiModule;
 import me.tl0x.ferdieclient.helpers.events.EventType;
 import me.tl0x.ferdieclient.helpers.helper;
 import net.minecraft.util.Formatting;
@@ -39,11 +40,11 @@ public class Module {
     }
 
     public void onEnable() {
-
+        helper.sendMessage("Toggled " + this.getName() + Formatting.GREEN + " On");
     }
 
     public void onDisable() {
-
+        helper.sendMessage("Toggled " + this.getName() + Formatting.RED + " Off");
     }
 
     public void onTick() {
@@ -56,11 +57,9 @@ public class Module {
 
     public static void toggle(Module m) {
         if (!m.isEnabled) {
-            helper.sendMessage("Toggled " + m.getName() + Formatting.GREEN + " On");
             m.isEnabled = true;
             m.onEnable();
         } else {
-            helper.sendMessage("Toggled " + m.getName() + Formatting.RED + " Off");
             m.isEnabled = false;
             m.onDisable();
         }

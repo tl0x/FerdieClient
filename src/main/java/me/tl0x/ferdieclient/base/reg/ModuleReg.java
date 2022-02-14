@@ -1,7 +1,12 @@
 package me.tl0x.ferdieclient.base.reg;
 
-import me.tl0x.ferdieclient.base.modules.*;
 import me.tl0x.ferdieclient.base.Module;
+import me.tl0x.ferdieclient.base.modules.exploit.*;
+import me.tl0x.ferdieclient.base.modules.misc.FakeHackerModule;
+import me.tl0x.ferdieclient.base.modules.render.FullBrightModule;
+import me.tl0x.ferdieclient.base.modules.util.ClickGuiModule;
+import me.tl0x.ferdieclient.base.modules.util.HudModule;
+import me.tl0x.ferdieclient.base.modules.util.MuteChatModule;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +18,12 @@ public class ModuleReg {
         modules.add(new ClickGuiModule());
         modules.add(new DupeModule());
         modules.add(new FakeHackerModule());
+        modules.add(new FlightModule());
+        modules.add(new FullBrightModule());
         modules.add(new HudModule());
         modules.add(new SpeedMineModule());
         modules.add(new SpeedModule());
+        modules.add(new NoFallModule());
         modules.add(new XCarryModule());
         modules.add(new MuteChatModule());
     }

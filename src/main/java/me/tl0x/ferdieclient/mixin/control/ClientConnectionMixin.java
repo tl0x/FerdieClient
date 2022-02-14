@@ -2,8 +2,7 @@ package me.tl0x.ferdieclient.mixin.control;
 
 import io.netty.util.concurrent.Future;
 import io.netty.util.concurrent.GenericFutureListener;
-import me.tl0x.ferdieclient.base.Module;
-import me.tl0x.ferdieclient.base.modules.DupeModule;
+import me.tl0x.ferdieclient.base.modules.exploit.DupeModule;
 import me.tl0x.ferdieclient.base.reg.ModuleReg;
 import me.tl0x.ferdieclient.helpers.events.EventHandler;
 import me.tl0x.ferdieclient.helpers.events.EventType;

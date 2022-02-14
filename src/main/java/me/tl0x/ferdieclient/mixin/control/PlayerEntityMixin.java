@@ -1,7 +1,7 @@
 package me.tl0x.ferdieclient.mixin.control;
 
 import me.tl0x.ferdieclient.FerdieClient;
-import me.tl0x.ferdieclient.base.modules.SpeedModule;
+import me.tl0x.ferdieclient.base.modules.exploit.SpeedModule;
 import me.tl0x.ferdieclient.base.reg.ModuleReg;
 import net.minecraft.entity.player.PlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;

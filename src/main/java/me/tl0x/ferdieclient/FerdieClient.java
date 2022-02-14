@@ -1,10 +1,11 @@
 package me.tl0x.ferdieclient;
 
-import me.tl0x.ferdieclient.base.modules.ClickGuiModule;
+import me.tl0x.ferdieclient.base.modules.util.ClickGuiModule;
 import me.tl0x.ferdieclient.base.reg.CommandReg;
 import me.tl0x.ferdieclient.base.reg.ConfigHandler;
 import me.tl0x.ferdieclient.base.reg.ModuleReg;
 import net.fabricmc.api.ModInitializer;
+import me.tl0x.ferdieclient.base.Module;
 
 import net.minecraft.client.MinecraftClient;
 import org.apache.logging.log4j.Level;
@@ -12,8 +13,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.File;
-import java.time.OffsetDateTime;
-import me.tl0x.ferdieclient.base.Module;
 
 public class FerdieClient implements ModInitializer {
 
@@ -36,6 +35,8 @@ public class FerdieClient implements ModInitializer {
 
         // KEYBINDS
 
+        Module clickgui = ModuleReg.getModulebyClass(ClickGuiModule.class);
+        clickgui.setKeybind(344);
 
 
         // DISCORD RPC
