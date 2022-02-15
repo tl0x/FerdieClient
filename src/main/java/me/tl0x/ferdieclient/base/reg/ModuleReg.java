@@ -1,6 +1,7 @@
 package me.tl0x.ferdieclient.base.reg;
 
 import me.tl0x.ferdieclient.base.Module;
+import me.tl0x.ferdieclient.base.modules.TestModule;
 import me.tl0x.ferdieclient.base.modules.exploit.*;
 import me.tl0x.ferdieclient.base.modules.misc.FakeHackerModule;
 import me.tl0x.ferdieclient.base.modules.render.FullBrightModule;
@@ -24,6 +25,7 @@ public class ModuleReg {
         modules.add(new SpeedMineModule());
         modules.add(new SpeedModule());
         modules.add(new NoFallModule());
+        modules.add(new TestModule());
         modules.add(new XCarryModule());
         modules.add(new MuteChatModule());
     }

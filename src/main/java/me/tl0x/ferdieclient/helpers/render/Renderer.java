@@ -3,9 +3,13 @@ package me.tl0x.ferdieclient.helpers.render;
 import com.mojang.blaze3d.systems.RenderSystem;
 import me.tl0x.ferdieclient.FerdieClient;
 import net.minecraft.client.render.*;
+import net.minecraft.client.render.block.entity.BlockEntityRenderDispatcher;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Matrix4f;
 import net.minecraft.util.math.Vec2f;
+import net.minecraft.util.math.Vec3d;
+import org.lwjgl.opengl.GL11;
 
 import java.awt.*;
 
@@ -144,5 +148,64 @@ public class Renderer {
         RenderSystem.disableBlend();
         RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
     }
+
+
+    public static void renderBlockOutline(Vec3d bpos, Vec3d dimensions, int r, int g, int b, int a) {
+        BlockEntityRenderDispatcher BERD = FerdieClient.client.getBlockEntityRenderDispatcher();
+        Camera c = BERD.camera;
+        Vec3d s = bpos.subtract(c.getPos());
+        Vec3d e = s.add(dimensions);
+        double f = s.x;
+        double g1 = s.y;
+        double h = s.z;
+        double i = e.x;
+        double j = e.y;
+        double k = e.z;
+        GL11.glPushMatrix();
+        GL11.glEnable(GL11.GL_BLEND);
+        GL11.glEnable(GL11.GL_LINE_SMOOTH);
+        GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+        GL11.glLineWidth(2);
+        GL11.glDisable(GL11.GL_TEXTURE_2D);
+        GL11.glEnable(GL11.GL_CULL_FACE);
+        GL11.glDisable(GL11.GL_DEPTH_TEST);
+        GL11.glDisable(GL11.GL_LIGHTING);
+        GL11.glRotated(MathHelper.wrapDegrees(c.getPitch()), 1, 0, 0);
+        GL11.glRotated(MathHelper.wrapDegrees(c.getYaw() + 180.0), 0, 1, 0);
+        GL11.glColor4f(r / 255F, g / 255F, b / 255F, a / 255F);
+        GL11.glBegin(GL11.GL_LINES);
+        GL11.glVertex3d(f, g1, h);
+        GL11.glVertex3d(i, g1, h);
+        GL11.glVertex3d(f, g1, h);
+        GL11.glVertex3d(f, j, h);
+        GL11.glVertex3d(f, g1, h);
+        GL11.glVertex3d(f, g1, k);
+        GL11.glVertex3d(i, g1, h);
+        GL11.glVertex3d(i, j, h);
+        GL11.glVertex3d(i, j, h);
+        GL11.glVertex3d(f, j, h);
+        GL11.glVertex3d(f, j, h);
+        GL11.glVertex3d(f, j, k);
+        GL11.glVertex3d(f, j, k);
+        GL11.glVertex3d(f, g1, k);
+        GL11.glVertex3d(f, g1, k);
+        GL11.glVertex3d(i, g1, k);
+        GL11.glVertex3d(i, g1, k);
+        GL11.glVertex3d(i, g1, h);
+        GL11.glVertex3d(f, j, k);
+        GL11.glVertex3d(i, j, k);
+        GL11.glVertex3d(i, g1, k);
+        GL11.glVertex3d(i, j, k);
+        GL11.glVertex3d(i, j, h);
+        GL11.glVertex3d(i, j, k);
+        GL11.glEnd();
+        GL11.glColor4f(1, 1, 1, 1);
+        GL11.glEnable(GL11.GL_DEPTH_TEST);
+        GL11.glEnable(GL11.GL_TEXTURE_2D);
+        GL11.glDisable(GL11.GL_BLEND);
+        GL11.glDisable(GL11.GL_LINE_SMOOTH);
+        GL11.glPopMatrix();
+    }
+
 
 }

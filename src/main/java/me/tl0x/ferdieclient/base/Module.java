@@ -4,6 +4,7 @@ import me.tl0x.ferdieclient.base.modules.ModuleType;
 import me.tl0x.ferdieclient.base.modules.util.ClickGuiModule;
 import me.tl0x.ferdieclient.helpers.events.EventType;
 import me.tl0x.ferdieclient.helpers.helper;
+import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Formatting;
 
 public class Module {
@@ -48,6 +49,10 @@ public class Module {
     }
 
     public void onTick() {
+
+    }
+
+    public void onRender(MatrixStack matrices, float tickDelta) {
 
     }
 
