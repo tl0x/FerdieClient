@@ -2,6 +2,7 @@ package me.tl0x.ferdieclient.helpers.Gui.clickgui;
 
 import me.tl0x.ferdieclient.FerdieClient;
 import me.tl0x.ferdieclient.base.Module;
+import me.tl0x.ferdieclient.base.modules.ModuleType;
 import me.tl0x.ferdieclient.base.reg.ModuleReg;
 import me.tl0x.ferdieclient.helpers.Gui.elements.Button;
 import net.minecraft.client.gui.DrawableHelper;
@@ -27,6 +28,11 @@ public class ClickGui extends Screen {
 
         List<Button> buttons = new ArrayList<>();
         int y = 0;
+        int y2 = 0;
+        int y3 = 0;
+        int y4 = 0;
+
+
         for (Module m : ModuleReg.getModules()) {
             Text modName = null;
             if (m.isEnabled) {
@@ -35,12 +41,33 @@ public class ClickGui extends Screen {
                 modName = Text.of(m.getName() + ": " + Formatting.RED + "Off");
             }
             if (modName != null) {
-                Button temp = new Button((int) 11*(width/12)-70, 0 + y, 70, 20, modName, color1, color2, () -> {
-                    Module.toggle(m);
-                });
-                buttons.add(temp);
+                if (m.getModuleType() == ModuleType.MODULETYPE_EXPLOIT) {
+                    Button temp = new Button((int) 11 * (width / 12) - 70, 0 + y, 70, 20, modName, color1, color2, () -> {
+                        Module.toggle(m);
+                    });
+                    buttons.add(temp);
+                    y += 20;
+                } else if (m.getModuleType() == ModuleType.MODULETYPE_MISC) {
+                    Button temp = new Button((int) 9 * (width / 12) - 70, 0 + y2, 70, 20, modName, color1, color2, () -> {
+                        Module.toggle(m);
+                    });
+                    buttons.add(temp);
+                    y2 += 20;
+                } else if (m.getModuleType() == ModuleType.MODULETYPE_RENDER) {
+                    Button temp = new Button((int) 7 * (width / 12) - 70, 0 + y3, 70, 20, modName, color1, color2, () -> {
+                        Module.toggle(m);
+                    });
+                    buttons.add(temp);
+                    y3 += 20;
+                } else if (m.getModuleType() == ModuleType.MODULETYPE_UTIL) {
+                    Button temp = new Button((int) 5 * (width / 12) - 70, 0 + y4, 70, 20, modName, color1, color2, () -> {
+                        Module.toggle(m);
+                    });
+                    buttons.add(temp);
+                    y4 += 20;
+                }
             }
-            y += 20;
+
 
         }
 

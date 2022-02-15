@@ -3,6 +3,7 @@ package me.tl0x.ferdieclient.base.modules.misc;
 import me.tl0x.ferdieclient.FerdieClient;
 import me.tl0x.ferdieclient.base.Keybind;
 import me.tl0x.ferdieclient.base.Module;
+import me.tl0x.ferdieclient.base.modules.ModuleType;
 import me.tl0x.ferdieclient.helpers.events.EventHandler;
 import me.tl0x.ferdieclient.helpers.events.EventType;
 import me.tl0x.ferdieclient.helpers.events.event.MouseEvent;
@@ -46,6 +47,7 @@ public class FakeHackerModule extends Module{
                 }
             }
         });
+        this.setModuleType(ModuleType.MODULETYPE_MISC);
     }
 
 
