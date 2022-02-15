@@ -2,6 +2,7 @@ package me.tl0x.ferdieclient.base.modules.render;
 
 import me.tl0x.ferdieclient.FerdieClient;
 import me.tl0x.ferdieclient.base.Module;
+import me.tl0x.ferdieclient.base.modules.ModuleType;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 
 public class FullBrightModule extends Module {
@@ -10,6 +11,7 @@ public class FullBrightModule extends Module {
 
     public FullBrightModule() {
         super("FullBright", "Makes everything bright");
+        this.setModuleType(ModuleType.MODULETYPE_RENDER);
     }
 
     @Override

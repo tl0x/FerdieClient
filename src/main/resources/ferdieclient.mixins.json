@@ -8,6 +8,7 @@
     "control.InGameGuiMixin",
     "control.KeyboardMixin",
     "control.MinecraftClientMixin",
+    "control.GameRendererMixin",
     "control.MouseMixin",
     "control.PlayerEntityMixin",
     "control.TickMixin",

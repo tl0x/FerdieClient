@@ -3,9 +3,13 @@ package me.tl0x.ferdieclient.helpers.render;
 import com.mojang.blaze3d.systems.RenderSystem;
 import me.tl0x.ferdieclient.FerdieClient;
 import net.minecraft.client.render.*;
+import net.minecraft.client.render.block.entity.BlockEntityRenderDispatcher;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Matrix4f;
 import net.minecraft.util.math.Vec2f;
+import net.minecraft.util.math.Vec3d;
+import org.lwjgl.opengl.GL11;
 
 import java.awt.*;
 
@@ -144,5 +148,81 @@ public class Renderer {
         RenderSystem.disableBlend();
         RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
     }
+
+
+
+
+
+    // 3D
+
+    public static void renderOutlineIntern(Vec3d start, Vec3d dimensions, MatrixStack stack, BufferBuilder buffer) {
+        Camera c = FerdieClient.client.gameRenderer.getCamera();
+        Vec3d camPos = c.getPos();
+        start = start.subtract(camPos);
+        Vec3d end = start.add(dimensions);
+        Matrix4f matrix = stack.peek().getPositionMatrix();
+        float x1 = (float) start.x;
+        float y1 = (float) start.y;
+        float z1 = (float) start.z;
+        float x2 = (float) end.x;
+        float y2 = (float) end.y;
+        float z2 = (float) end.z;
+
+        buffer.vertex(matrix, x1, y1, z1).next();
+        buffer.vertex(matrix, x1, y1, z2).next();
+        buffer.vertex(matrix, x1, y1, z2).next();
+        buffer.vertex(matrix, x2, y1, z2).next();
+        buffer.vertex(matrix, x2, y1, z2).next();
+        buffer.vertex(matrix, x2, y1, z1).next();
+        buffer.vertex(matrix, x2, y1, z1).next();
+        buffer.vertex(matrix, x1, y1, z1).next();
+
+        buffer.vertex(matrix, x1, y2, z1).next();
+        buffer.vertex(matrix, x1, y2, z2).next();
+        buffer.vertex(matrix, x1, y2, z2).next();
+        buffer.vertex(matrix, x2, y2, z2).next();
+        buffer.vertex(matrix, x2, y2, z2).next();
+        buffer.vertex(matrix, x2, y2, z1).next();
+        buffer.vertex(matrix, x2, y2, z1).next();
+        buffer.vertex(matrix, x1, y2, z1).next();
+
+        buffer.vertex(matrix, x1, y1, z1).next();
+        buffer.vertex(matrix, x1, y2, z1).next();
+
+        buffer.vertex(matrix, x2, y1, z1).next();
+        buffer.vertex(matrix, x2, y2, z1).next();
+
+        buffer.vertex(matrix, x2, y1, z2).next();
+        buffer.vertex(matrix, x2, y2, z2).next();
+
+        buffer.vertex(matrix, x1, y1, z2).next();
+        buffer.vertex(matrix, x1, y2, z2).next();
+    }
+
+    public static void renderOutline(Vec3d start, Vec3d dimensions, Color color, MatrixStack stack) {
+        RenderSystem.enableBlend();
+        BufferBuilder buffer = renderPrepare(color);
+
+        renderOutlineIntern(start, dimensions, stack, buffer);
+
+        buffer.end();
+        BufferRenderer.draw(buffer);
+        GL11.glDepthFunc(GL11.GL_LEQUAL);
+        RenderSystem.disableBlend();
+    }
+
+    public static BufferBuilder renderPrepare(Color color) {
+        float red = color.getRed() / 255f;
+        float green = color.getGreen() / 255f;
+        float blue = color.getBlue() / 255f;
+        float alpha = color.getAlpha() / 255f;
+        RenderSystem.setShader(GameRenderer::getPositionShader);
+        GL11.glDepthFunc(GL11.GL_ALWAYS);
+        RenderSystem.setShaderColor(red, green, blue, alpha);
+        BufferBuilder buffer = Tessellator.getInstance().getBuffer();
+        buffer.begin(VertexFormat.DrawMode.DEBUG_LINES, VertexFormats.POSITION);
+        return buffer;
+    }
+
 
 }

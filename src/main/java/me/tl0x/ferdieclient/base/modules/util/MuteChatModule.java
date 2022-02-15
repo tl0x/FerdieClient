@@ -3,6 +3,7 @@ package me.tl0x.ferdieclient.base.modules.util;
 import me.tl0x.ferdieclient.FerdieClient;
 import me.tl0x.ferdieclient.base.Keybind;
 import me.tl0x.ferdieclient.base.Module;
+import me.tl0x.ferdieclient.base.modules.ModuleType;
 import me.tl0x.ferdieclient.helpers.events.EventHandler;
 import me.tl0x.ferdieclient.helpers.events.EventType;
 import me.tl0x.ferdieclient.helpers.events.event.PacketEvent;
@@ -21,6 +22,7 @@ public class MuteChatModule extends Module {
                 event.setCancelled(true);
             }
         });
+        setModuleType(ModuleType.MODULETYPE_UTIL);
     }
 
 

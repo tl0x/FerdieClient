@@ -1,7 +1,9 @@
 package me.tl0x.ferdieclient.base.modules.util;
 
+import me.tl0x.ferdieclient.FerdieClient;
 import me.tl0x.ferdieclient.base.Keybind;
 import me.tl0x.ferdieclient.base.Module;
+import me.tl0x.ferdieclient.base.modules.ModuleType;
 
 public class HudModule extends Module {
 
@@ -9,6 +11,7 @@ public class HudModule extends Module {
     public static boolean enabled = false;
     public HudModule() {
         super("Hud","Enables or Disables the in game HUD.");
+        setModuleType(ModuleType.MODULETYPE_UTIL);
     }
 
     @Override
