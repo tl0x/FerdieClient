@@ -6,6 +6,7 @@ import me.tl0x.ferdieclient.base.modules.exploit.*;
 import me.tl0x.ferdieclient.base.modules.misc.AutoEzModule;
 import me.tl0x.ferdieclient.base.modules.misc.FakeHackerModule;
 import me.tl0x.ferdieclient.base.modules.render.FullBrightModule;
+import me.tl0x.ferdieclient.base.modules.util.AutoElytraModule;
 import me.tl0x.ferdieclient.base.modules.util.ClickGuiModule;
 import me.tl0x.ferdieclient.base.modules.util.HudModule;
 import me.tl0x.ferdieclient.base.modules.util.MuteChatModule;
@@ -17,6 +18,7 @@ public class ModuleReg {
     static List<Module> modules = new ArrayList<>();
 
     public static void init() {
+        modules.add(new AutoElytraModule());
         modules.add(new AutoEzModule());
         modules.add(new ClickGuiModule());
         modules.add(new DupeModule());

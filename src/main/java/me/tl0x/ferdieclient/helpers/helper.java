@@ -33,7 +33,6 @@ public class helper {
         Objects.requireNonNull(FerdieClient.client.interactionManager).clickSlot(0,slotId,0, SlotActionType.PICKUP, FerdieClient.client.player);
         FerdieClient.client.interactionManager.clickSlot(0,targetSlot,0,SlotActionType.PICKUP, FerdieClient.client.player);
         FerdieClient.client.interactionManager.clickSlot(0, slotId, 0, SlotActionType.PICKUP, FerdieClient.client.player);
-        helper.sendMessage(Integer.toString(slotId) + " " + Integer.toString(targetSlot));
     }
 
     public static void wait(int ms) {
