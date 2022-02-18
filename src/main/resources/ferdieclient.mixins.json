@@ -8,6 +8,8 @@
     "control.InGameGuiMixin",
     "control.KeyboardMixin",
     "control.MinecraftClientMixin",
+    "control.MultiplayerScreenMixin",
+    "control.MinecraftClientAccessor",
     "control.GameRendererMixin",
     "control.MouseMixin",
     "control.PlayerEntityMixin",

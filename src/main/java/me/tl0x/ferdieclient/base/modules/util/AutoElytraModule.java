@@ -22,23 +22,29 @@ public class AutoElytraModule extends Module {
     @Override
     public void onTick() {
         ItemStack elytra = null;
-        Boolean elytrainEnv = false;
+        ItemStack chestplate = null;
         PlayerInventory inventory = FerdieClient.client.player.getInventory();
-        if(inventory.getArmorStack(3).isOf(Items.ELYTRA)) {
-            return;
-        }
         List<ItemStack> lstinv = (List) inventory.main;
 
         for (ItemStack i : lstinv) {
             if (i.getItem() == Items.ELYTRA) {
-                elytrainEnv = true;
                 elytra = i;
+            }
+            if (i.getItem() == Items.LEATHER_CHESTPLATE || i.getItem() == Items.IRON_CHESTPLATE || i.getItem() == Items.GOLDEN_CHESTPLATE || i.getItem() == Items.DIAMOND_CHESTPLATE || i.getItem() == Items.NETHERITE_CHESTPLATE) {
+                chestplate = i;
             }
         }
 
-        if (FerdieClient.client.player.fallDistance > 5) {
+        if (FerdieClient.client.player.fallDistance > 1) {
             if(elytra != null) {
                 int slot = helper.fixSlot(inventory.getSlotWithStack(elytra));
+                helper.swapSlots(slot, 6);
+            }
+        }
+
+        if (FerdieClient.client.player.isOnGround() && FerdieClient.client.player.fallDistance < 1) {
+            if (chestplate != null) {
+                int slot = helper.fixSlot(inventory.getSlotWithStack(chestplate));
                 helper.swapSlots(slot, 6);
             }
         }

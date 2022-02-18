@@ -8,6 +8,7 @@ import net.fabricmc.api.ModInitializer;
 import me.tl0x.ferdieclient.base.Module;
 
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.util.Session;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -37,9 +38,6 @@ public class FerdieClient implements ModInitializer {
 
         Module clickgui = ModuleReg.getModulebyClass(ClickGuiModule.class);
         clickgui.setKeybind(344);
-
-
-        // DISCORD RPC
 
 
         log(Level.INFO, "Initializing Modules");

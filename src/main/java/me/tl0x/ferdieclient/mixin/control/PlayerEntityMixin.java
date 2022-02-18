@@ -22,5 +22,6 @@ public class PlayerEntityMixin {
             }
             cir.setReturnValue(SpeedModule.speed);
         }
+
     }
 }

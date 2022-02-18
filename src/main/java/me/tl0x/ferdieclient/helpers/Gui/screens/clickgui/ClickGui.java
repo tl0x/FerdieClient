@@ -1,24 +1,30 @@
-package me.tl0x.ferdieclient.helpers.Gui.clickgui;
+package me.tl0x.ferdieclient.helpers.Gui.screens.clickgui;
 
-import me.tl0x.ferdieclient.FerdieClient;
 import me.tl0x.ferdieclient.base.Module;
 import me.tl0x.ferdieclient.base.modules.ModuleType;
 import me.tl0x.ferdieclient.base.reg.ModuleReg;
 import me.tl0x.ferdieclient.helpers.Gui.elements.Button;
-import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
-import org.apache.logging.log4j.Level;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ClickGui extends Screen {
-    public ClickGui() {
+
+    public static ClickGui instance = null;
+    private ClickGui() {
         super(Text.of(""));
+    }
+
+    public static ClickGui getInstance() {
+        if (instance == null) {
+            instance = new ClickGui();
+        }
+        return instance;
     }
 
     @Override
