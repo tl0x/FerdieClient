@@ -30,6 +30,7 @@ public class ModuleReg {
         modules.add(new SpeedModule());
         modules.add(new NoFallModule());
         modules.add(new XCarryModule());
+        modules.add(new Triggerbot());
         modules.add(new ExposedXrayModule());
         modules.add(new MuteChatModule());
     }

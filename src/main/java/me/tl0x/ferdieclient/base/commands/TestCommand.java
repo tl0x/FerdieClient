@@ -3,15 +3,17 @@ package me.tl0x.ferdieclient.base.commands;
 import me.tl0x.ferdieclient.FerdieClient;
 import me.tl0x.ferdieclient.base.Command;
 import me.tl0x.ferdieclient.helpers.helper;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.entity.passive.VillagerEntity;
-import net.minecraft.text.Text;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.item.AirBlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
-import net.minecraft.village.TradeOffer;
-import net.minecraft.village.TradeOfferList;
+
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TestCommand extends Command {
 
@@ -21,20 +23,29 @@ public class TestCommand extends Command {
 
     @Override
     public void onExecute(String[] args) {
-        HitResult e = FerdieClient.client.crosshairTarget;
-        VillagerEntity ve = null;
-        if (e instanceof EntityHitResult ehr && ehr.getEntity() instanceof VillagerEntity) {
-            ve = (VillagerEntity) ehr.getEntity();
+//        PlayerInventory inv = FerdieClient.client.player.getInventory();
+//        List<ItemStack> items = inv.main;
+//
+//        for (ItemStack i: items) {
+//            if (!(i.getItem() instanceof AirBlockItem)) {
+//                helper.sendMessage(i.getItem().getName().getString() + " x" + Integer.toString(i.getCount()));
+//            }
+//        }
+
+        PlayerEntity target = null;
+        HitResult hr = FerdieClient.client.crosshairTarget;
+        if (hr instanceof EntityHitResult ehr && ehr.getEntity() instanceof PlayerEntity) {
+            target = (PlayerEntity) ehr.getEntity();
         }
 
-
-        if (ve != null) {
-            ArrayList<TradeOffer> trades = ve.getOffers();
-            for (TradeOffer t: trades) {
-                helper.sendMessage(t.getAdjustedFirstBuyItem().getName().toString());
-                helper.sendMessage(t.getSellItem().getName().toString());
+        if (target != null) {
+            List<ItemStack> inv = target.getInventory().main;
+            for(ItemStack i: inv) {
+                if (!i.isEmpty()) {
+                    helper.sendMessage(i.getItem().getName().getString() + " x" + Integer.toString(i.getCount()));
+                }
             }
-        }
 
+        }
     }
 }
