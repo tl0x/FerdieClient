@@ -1,4 +1,4 @@
-package me.tl0x.ferdieclient.base;
+package me.tl0x.ferdieclient.base.bases;
 
 public class Keybind {
 

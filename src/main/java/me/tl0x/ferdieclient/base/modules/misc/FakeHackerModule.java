@@ -1,14 +1,11 @@
 package me.tl0x.ferdieclient.base.modules.misc;
 
 import me.tl0x.ferdieclient.FerdieClient;
-import me.tl0x.ferdieclient.base.Keybind;
-import me.tl0x.ferdieclient.base.Module;
+import me.tl0x.ferdieclient.base.bases.Module;
 import me.tl0x.ferdieclient.base.modules.ModuleType;
 import me.tl0x.ferdieclient.helpers.events.EventHandler;
 import me.tl0x.ferdieclient.helpers.events.EventType;
 import me.tl0x.ferdieclient.helpers.events.event.MouseEvent;
-import me.tl0x.ferdieclient.helpers.helper;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.command.argument.EntityAnchorArgumentType;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;

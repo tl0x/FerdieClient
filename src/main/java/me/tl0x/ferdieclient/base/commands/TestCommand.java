@@ -1,18 +1,14 @@
 package me.tl0x.ferdieclient.base.commands;
 
 import me.tl0x.ferdieclient.FerdieClient;
-import me.tl0x.ferdieclient.base.Command;
+import me.tl0x.ferdieclient.base.bases.Command;
 import me.tl0x.ferdieclient.helpers.helper;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.item.AirBlockItem;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TestCommand extends Command {

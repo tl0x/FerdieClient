@@ -1,14 +1,11 @@
 package me.tl0x.ferdieclient.base.modules.util;
 
 import me.tl0x.ferdieclient.FerdieClient;
-import me.tl0x.ferdieclient.base.Keybind;
-import me.tl0x.ferdieclient.base.Module;
+import me.tl0x.ferdieclient.base.bases.Module;
 import me.tl0x.ferdieclient.base.modules.ModuleType;
 import me.tl0x.ferdieclient.helpers.events.EventHandler;
 import me.tl0x.ferdieclient.helpers.events.EventType;
 import me.tl0x.ferdieclient.helpers.events.event.PacketEvent;
-import net.minecraft.client.gui.screen.pack.ResourcePackOrganizer;
-import net.minecraft.network.packet.c2s.play.ChatMessageC2SPacket;
 import net.minecraft.network.packet.s2c.play.GameMessageS2CPacket;
 
 public class MuteChatModule extends Module {

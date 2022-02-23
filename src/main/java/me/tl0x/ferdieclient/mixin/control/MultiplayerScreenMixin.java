@@ -4,6 +4,7 @@ package me.tl0x.ferdieclient.mixin.control;
 import me.tl0x.ferdieclient.FerdieClient;
 import me.tl0x.ferdieclient.helpers.Gui.elements.Button;
 import me.tl0x.ferdieclient.helpers.Gui.screens.AltScreen;
+import me.tl0x.ferdieclient.helpers.font.FontRenderer;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.multiplayer.MultiplayerScreen;

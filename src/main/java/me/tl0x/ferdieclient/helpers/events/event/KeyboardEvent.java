@@ -1,8 +1,6 @@
 package me.tl0x.ferdieclient.helpers.events.event;
 
-import me.tl0x.ferdieclient.base.Event;
-
-import java.security.Key;
+import me.tl0x.ferdieclient.base.bases.Event;
 
 public class KeyboardEvent extends Event {
     int keyCode;

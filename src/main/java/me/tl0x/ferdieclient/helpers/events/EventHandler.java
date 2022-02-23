@@ -1,6 +1,6 @@
 package me.tl0x.ferdieclient.helpers.events;
 
-import me.tl0x.ferdieclient.base.Event;
+import me.tl0x.ferdieclient.base.bases.Event;
 
 import java.util.ArrayList;
 import java.util.HashMap;

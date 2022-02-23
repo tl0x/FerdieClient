@@ -1,10 +1,9 @@
 package me.tl0x.ferdieclient.base.commands;
 
-import me.tl0x.ferdieclient.base.Command;
+import me.tl0x.ferdieclient.base.bases.Command;
 import me.tl0x.ferdieclient.helpers.helper;
 import me.tl0x.ferdieclient.base.reg.ModuleReg;
-import me.tl0x.ferdieclient.base.Module;
-import net.minecraft.util.Formatting;
+import me.tl0x.ferdieclient.base.bases.Module;
 
 public class ToggleCommand extends Command {
 

@@ -1,6 +1,6 @@
 package me.tl0x.ferdieclient.helpers.events.event;
 
-import me.tl0x.ferdieclient.base.Event;
+import me.tl0x.ferdieclient.base.bases.Event;
 import net.minecraft.network.Packet;
 
 public class PacketEvent extends Event {

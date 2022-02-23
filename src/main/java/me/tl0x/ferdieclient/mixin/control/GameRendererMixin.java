@@ -2,7 +2,7 @@ package me.tl0x.ferdieclient.mixin.control;
 
 
 import me.tl0x.ferdieclient.base.reg.ModuleReg;
-import me.tl0x.ferdieclient.base.Module;
+import me.tl0x.ferdieclient.base.bases.Module;
 
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.util.math.MatrixStack;

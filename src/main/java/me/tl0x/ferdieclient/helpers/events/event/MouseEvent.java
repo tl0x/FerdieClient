@@ -1,6 +1,6 @@
 package me.tl0x.ferdieclient.helpers.events.event;
 
-import me.tl0x.ferdieclient.base.Event;
+import me.tl0x.ferdieclient.base.bases.Event;
 
 public class MouseEvent extends Event {
     final int button;

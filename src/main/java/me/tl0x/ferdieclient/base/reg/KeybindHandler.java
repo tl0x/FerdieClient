@@ -1,9 +1,6 @@
 package me.tl0x.ferdieclient.base.reg;
 
-import me.tl0x.ferdieclient.base.Module;
-import me.tl0x.ferdieclient.helpers.helper;
-
-import java.util.List;
+import me.tl0x.ferdieclient.base.bases.Module;
 
 
 public class KeybindHandler {

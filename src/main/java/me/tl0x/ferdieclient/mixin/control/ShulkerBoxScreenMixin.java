@@ -2,7 +2,7 @@ package me.tl0x.ferdieclient.mixin.control;
 
 import me.tl0x.ferdieclient.base.modules.exploit.DupeModule;
 import me.tl0x.ferdieclient.base.reg.ModuleReg;
-import me.tl0x.ferdieclient.base.Module;
+import me.tl0x.ferdieclient.base.bases.Module;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.gui.screen.ingame.ShulkerBoxScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;

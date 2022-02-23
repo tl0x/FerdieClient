@@ -1,7 +1,6 @@
 package me.tl0x.ferdieclient.base.reg;
 
-import me.tl0x.ferdieclient.base.Module;
-import me.tl0x.ferdieclient.base.modules.TestModule;
+import me.tl0x.ferdieclient.base.bases.Module;
 import me.tl0x.ferdieclient.base.modules.exploit.*;
 import me.tl0x.ferdieclient.base.modules.misc.AutoEzModule;
 import me.tl0x.ferdieclient.base.modules.misc.FakeHackerModule;

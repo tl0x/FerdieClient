@@ -1,7 +1,7 @@
 package me.tl0x.ferdieclient.base.commands;
 
-import me.tl0x.ferdieclient.base.Command;
-import me.tl0x.ferdieclient.base.Module;
+import me.tl0x.ferdieclient.base.bases.Command;
+import me.tl0x.ferdieclient.base.bases.Module;
 import me.tl0x.ferdieclient.base.reg.ModuleReg;
 import me.tl0x.ferdieclient.helpers.helper;
 

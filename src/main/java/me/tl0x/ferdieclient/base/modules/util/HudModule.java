@@ -1,8 +1,6 @@
 package me.tl0x.ferdieclient.base.modules.util;
 
-import me.tl0x.ferdieclient.FerdieClient;
-import me.tl0x.ferdieclient.base.Keybind;
-import me.tl0x.ferdieclient.base.Module;
+import me.tl0x.ferdieclient.base.bases.Module;
 import me.tl0x.ferdieclient.base.modules.ModuleType;
 
 public class HudModule extends Module {

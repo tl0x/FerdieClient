@@ -5,10 +5,9 @@ import me.tl0x.ferdieclient.base.reg.CommandReg;
 import me.tl0x.ferdieclient.base.reg.ConfigHandler;
 import me.tl0x.ferdieclient.base.reg.ModuleReg;
 import net.fabricmc.api.ModInitializer;
-import me.tl0x.ferdieclient.base.Module;
+import me.tl0x.ferdieclient.base.bases.Module;
 
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.util.Session;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,6 +22,7 @@ public class FerdieClient implements ModInitializer {
     public static final String MOD_NAME = "FerdieClient1.18.1";
     public static final MinecraftClient client = MinecraftClient.getInstance();
     public static final File SAVE = new File(FerdieClient.client.runDirectory, "FerdieClient");
+    public static final String MOD_VERSION = "1.0.2";
 
     @Override
     public void onInitialize() {

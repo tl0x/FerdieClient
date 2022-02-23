@@ -1,6 +1,6 @@
 package me.tl0x.ferdieclient.helpers.Gui.screens.clickgui;
 
-import me.tl0x.ferdieclient.base.Module;
+import me.tl0x.ferdieclient.base.bases.Module;
 import me.tl0x.ferdieclient.base.modules.ModuleType;
 import me.tl0x.ferdieclient.base.reg.ModuleReg;
 import me.tl0x.ferdieclient.helpers.Gui.elements.Button;

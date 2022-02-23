@@ -3,8 +3,10 @@ package me.tl0x.ferdieclient.mixin.control;
 
 import me.tl0x.ferdieclient.FerdieClient;
 import me.tl0x.ferdieclient.base.reg.ModuleReg;
-import me.tl0x.ferdieclient.base.Module;
+import me.tl0x.ferdieclient.base.bases.Module;
+import me.tl0x.ferdieclient.helpers.font.FontRenderer;
 import net.minecraft.client.MinecraftClient;
+import me.tl0x.ferdieclient.helpers.font.glyph.GlyphRenderer;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.util.math.MatrixStack;
@@ -35,6 +37,9 @@ public abstract class InGameGuiMixin {
     public void render(MatrixStack matrices, float tickDelta, CallbackInfo ci) {
         int a = 2;
 
+        GlyphRenderer Big = FontRenderer.getRenderer(30);
+        GlyphRenderer modules = FontRenderer.getRenderer(16);
+
         Color coords = new Color(52, 235, 134);
 
         PlayerEntity pos = FerdieClient.client.player;
@@ -44,15 +49,15 @@ public abstract class InGameGuiMixin {
 
         Module GuiModule = ModuleReg.getModulebyName("hud");
         if(GuiModule.isEnabled) {
-            MinecraftClient.getInstance().textRenderer.draw(matrices, Text.of("FerdieClient"), 12, scaledHeight/12-10, 16733525);
+            Big.drawString(matrices, "FerdieClient", 12, scaledHeight/12-10, 16733525, false);
             for(int i = 0; i < ModuleReg.getModules().size(); i++) {
                 if (ModuleReg.getModules().get(i).isEnabled) {
-                    MinecraftClient.getInstance().textRenderer.draw(matrices, Text.of(ModuleReg.getModules().get(i).getName()), 12, scaledHeight/8 + a, 3633115);
+                    modules.drawString(matrices, ModuleReg.getModules().get(i).getName(), 12, scaledHeight/8 + a, 3633115, false);
                     a += 10;
                 }
             }
 
-            FerdieClient.client.textRenderer.draw(matrices, Text.of("Coords: " + Integer.toString(x) + " " + Integer.toString(y) + " " + Integer.toString(z)), scaledWidth - 140, scaledHeight/12-10, coords.getRGB());
+            Big.drawString(matrices, "Coords: " + Integer.toString(x) + " " + Integer.toString(y) + " " + Integer.toString(z), scaledWidth-160, scaledHeight/12-10, coords.getRGB(), false);
 
         }
     }

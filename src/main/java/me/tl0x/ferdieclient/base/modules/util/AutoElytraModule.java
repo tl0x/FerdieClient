@@ -1,14 +1,12 @@
 package me.tl0x.ferdieclient.base.modules.util;
 
 import me.tl0x.ferdieclient.FerdieClient;
-import me.tl0x.ferdieclient.base.Module;
+import me.tl0x.ferdieclient.base.bases.Module;
 import me.tl0x.ferdieclient.base.modules.ModuleType;
 import me.tl0x.ferdieclient.helpers.helper;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.*;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class AutoElytraModule extends Module {

@@ -1,21 +1,14 @@
 package me.tl0x.ferdieclient.base.modules;
 
 import me.tl0x.ferdieclient.FerdieClient;
-import me.tl0x.ferdieclient.base.Keybind;
-import me.tl0x.ferdieclient.base.Module;
+import me.tl0x.ferdieclient.base.bases.Module;
 
-import me.tl0x.ferdieclient.helpers.helper;
 import me.tl0x.ferdieclient.helpers.render.Renderer;
 import net.minecraft.block.AirBlock;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Position;
 import net.minecraft.util.math.Vec3d;
-import org.apache.logging.log4j.Level;
 
 import java.awt.*;
 

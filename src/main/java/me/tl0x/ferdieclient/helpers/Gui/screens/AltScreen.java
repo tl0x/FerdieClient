@@ -2,6 +2,7 @@ package me.tl0x.ferdieclient.helpers.Gui.screens;
 
 import me.tl0x.ferdieclient.FerdieClient;
 import me.tl0x.ferdieclient.helpers.auth.Account;
+import me.tl0x.ferdieclient.helpers.font.FontRenderer;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.gui.screen.Screen;

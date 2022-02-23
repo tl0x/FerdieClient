@@ -1,17 +1,12 @@
 package me.tl0x.ferdieclient.base.reg;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import me.tl0x.ferdieclient.FerdieClient;
-import me.tl0x.ferdieclient.base.Module;
-import net.minecraft.client.realms.util.JsonUtils;
-import org.apache.commons.io.FileUtils;
+import me.tl0x.ferdieclient.base.bases.Module;
 import org.apache.logging.log4j.Level;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class ConfigHandler {
 
@@ -59,6 +54,7 @@ public class ConfigHandler {
             }
             br.close();
         } catch (FileNotFoundException e) {
+            FerdieClient.log(Level.ERROR, "File not found. Try creating it next time?");
             e.printStackTrace();
         } catch (Exception e) {
             FerdieClient.log(Level.ERROR, "An error occured bozo (when loading mods)");

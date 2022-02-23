@@ -1,12 +1,11 @@
 package me.tl0x.ferdieclient.base.modules.misc;
 
 import me.tl0x.ferdieclient.FerdieClient;
-import me.tl0x.ferdieclient.base.Module;
+import me.tl0x.ferdieclient.base.bases.Module;
 import me.tl0x.ferdieclient.base.modules.ModuleType;
 import me.tl0x.ferdieclient.helpers.events.EventHandler;
 import me.tl0x.ferdieclient.helpers.events.EventType;
 import me.tl0x.ferdieclient.helpers.events.event.PacketEvent;
-import net.minecraft.client.gui.screen.pack.ResourcePackOrganizer;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.packet.s2c.play.DeathMessageS2CPacket;
 
