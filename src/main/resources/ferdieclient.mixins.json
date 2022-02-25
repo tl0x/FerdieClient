@@ -1,7 +1,7 @@
 {
   "required": true,
   "package": "me.tl0x.ferdieclient.mixin",
-  "compatibilityLevel": "JAVA_16",
+  "compatibilityLevel": "JAVA_17",
   "mixins": [
     "control.ChatMixin",
     "control.ClientConnectionMixin",

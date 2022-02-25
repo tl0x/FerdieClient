@@ -199,6 +199,55 @@ public class Renderer {
         buffer.vertex(matrix, x1, y2, z2).next();
     }
 
+    public static void renderLine3d(Vec3d start, Vec3d end, Color color, MatrixStack matrices) {
+        float red = color.getRed() / 255f;
+        float green = color.getGreen() / 255f;
+        float blue = color.getBlue() / 255f;
+        float alpha = color.getAlpha() / 255f;
+        Camera c = FerdieClient.client.gameRenderer.getCamera();
+        Vec3d camPos = c.getPos();
+        start = start.subtract(camPos);
+        end = end.subtract(camPos);
+        Matrix4f matrix = matrices.peek().getPositionMatrix();
+        float x1 = (float) start.x;
+        float y1 = (float) start.y;
+        float z1 = (float) start.z;
+        float x2 = (float) end.x;
+        float y2 = (float) end.y;
+        float z2 = (float) end.z;
+        BufferBuilder buffer = Tessellator.getInstance().getBuffer();
+        RenderSystem.setShader(GameRenderer::getPositionColorShader);
+        GL11.glDepthFunc(GL11.GL_ALWAYS);
+        RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
+        buffer.begin(VertexFormat.DrawMode.DEBUG_LINES, VertexFormats.POSITION_COLOR);
+
+        buffer.vertex(matrix, x1, y1, z1).color(red, green, blue, alpha).next();
+        buffer.vertex(matrix, x2, y2, z2).color(red, green, blue, alpha).next();
+
+        buffer.end();
+
+        BufferRenderer.draw(buffer);
+        GL11.glDepthFunc(GL11.GL_LEQUAL);
+        RenderSystem.disableBlend();
+    }
+
+    public static Vec3d getCrosshairVector() {
+
+        Camera camera = FerdieClient.client.gameRenderer.getCamera();
+
+        float vec = 0.017453292F;
+        float pi = (float) Math.PI;
+
+        float f1 = MathHelper.cos(-camera.getYaw() * vec - pi);
+        float f2 = MathHelper.sin(-camera.getYaw() * vec - pi);
+        float f3 = -MathHelper.cos(-camera.getPitch() * vec);
+        float f4 = MathHelper.sin(-camera.getPitch() * vec);
+
+        return new Vec3d(f2 * f3, f4, f1 * f3).add(camera.getPos());
+    }
+
     public static void renderOutline(Vec3d start, Vec3d dimensions, Color color, MatrixStack stack) {
         RenderSystem.enableBlend();
         BufferBuilder buffer = renderPrepare(color);

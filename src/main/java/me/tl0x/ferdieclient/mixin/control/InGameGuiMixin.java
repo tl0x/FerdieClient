@@ -37,7 +37,7 @@ public abstract class InGameGuiMixin {
     public void render(MatrixStack matrices, float tickDelta, CallbackInfo ci) {
         int a = 2;
 
-        GlyphRenderer Big = FontRenderer.getRenderer(30);
+        GlyphRenderer Big = FontRenderer.getRenderer(25);
         GlyphRenderer modules = FontRenderer.getRenderer(16);
 
         Color coords = new Color(52, 235, 134);
@@ -57,16 +57,8 @@ public abstract class InGameGuiMixin {
                 }
             }
 
-            Big.drawString(matrices, "Coords: " + Integer.toString(x) + " " + Integer.toString(y) + " " + Integer.toString(z), scaledWidth-160, scaledHeight/12-10, coords.getRGB(), false);
+            Big.drawString(matrices, "Coords: " + Integer.toString(x) + " " + Integer.toString(y) + " " + Integer.toString(z), scaledWidth-170, scaledHeight/12-10, coords.getRGB(), false);
 
         }
-    }
-
-    private static double round(double value, int places) {
-        if (places < 0) throw new IllegalArgumentException();
-
-        BigDecimal bd = new BigDecimal(Double.toString(value));
-        bd = bd.setScale(places, RoundingMode.HALF_UP);
-        return bd.doubleValue();
     }
 }

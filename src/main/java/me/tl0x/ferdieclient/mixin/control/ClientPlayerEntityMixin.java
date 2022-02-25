@@ -16,6 +16,11 @@ public class ClientPlayerEntityMixin {
     @Inject(method="init", at=@At("TAIL"))
     public void init(CallbackInfo ci) {
         List<Module> mods = ConfigHandler.loadActiveMods();
+        try {
+            ConfigHandler.loadKeybinds();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         for (Module m: mods) {
             if (!m.isEnabled) {
                 m.onEnable();

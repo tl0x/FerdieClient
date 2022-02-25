@@ -1,6 +1,7 @@
 package me.tl0x.ferdieclient.base.bases;
 
 import me.tl0x.ferdieclient.base.modules.ModuleType;
+import me.tl0x.ferdieclient.base.reg.ModuleReg;
 import me.tl0x.ferdieclient.helpers.helper;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Formatting;
@@ -56,6 +57,7 @@ public class Module {
 
     public void setKeybind(int keyCode) {
         this.keybind = new Keybind(keyCode);
+        ModuleReg.registerKeybind(this, keyCode);
     }
 
     public static void toggle(Module m) {

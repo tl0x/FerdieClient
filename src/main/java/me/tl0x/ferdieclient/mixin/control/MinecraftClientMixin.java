@@ -15,9 +15,10 @@ public class MinecraftClientMixin {
 
     @Inject(method="stop", at=@At("HEAD"))
     public void stop(CallbackInfo ci) {
-        FerdieClient.log(Level.INFO, "STOPPING THE CLIENT AND SAVING (PLS)");
+        FerdieClient.log(Level.INFO, "STOPPING THE CLIENT AND SAVING CONFIGS");
         try {
             ConfigHandler.saveActiveMods();
+            ConfigHandler.saveKeybinds();
         } catch(Exception e){
             e.printStackTrace();
         }

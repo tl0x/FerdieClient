@@ -68,6 +68,7 @@ public class FerdieClient implements ModInitializer {
             SAVE.mkdir();
          }
         ConfigHandler.initFile();
+        ConfigHandler.initKeyFile();
     }
 
 

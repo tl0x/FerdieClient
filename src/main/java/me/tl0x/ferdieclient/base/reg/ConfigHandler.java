@@ -2,11 +2,14 @@ package me.tl0x.ferdieclient.base.reg;
 
 import me.tl0x.ferdieclient.FerdieClient;
 import me.tl0x.ferdieclient.base.bases.Module;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.Level;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ConfigHandler {
 
@@ -19,6 +22,51 @@ public class ConfigHandler {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static void initKeyFile() {
+        File KEYBIND_FILE = new File(FerdieClient.SAVE, "keybinds.txt");
+        try {
+            if (!KEYBIND_FILE.exists()) {
+                KEYBIND_FILE.createNewFile();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void saveKeybinds() throws IOException {
+        File KEYBIND_FILE = new File(FerdieClient.SAVE, "keybinds.txt");
+
+        Map<Module, Integer> keybinds = ModuleReg.getKeybinds();
+
+        FileWriter writer = new FileWriter(KEYBIND_FILE);
+        BufferedWriter w = new BufferedWriter(writer);
+
+        for (Module m: keybinds.keySet()) {
+            int keyCode = keybinds.get(m);
+            w.write(m.getName() + " ");
+            w.write(keyCode + "\n");
+        }
+        w.close();
+        writer.close();
+    }
+
+    public static void loadKeybinds() throws IOException {
+        File KEYBIND_FILE = new File(FerdieClient.SAVE, "keybinds.txt");
+        BufferedReader b = new BufferedReader(new FileReader(KEYBIND_FILE));
+        String line;
+        while ((line = b.readLine()) != null) {
+            String[] tba = StringUtils.split(line);
+            Module m = ModuleReg.getModulebyName(tba[0]);
+            int key = Integer.parseInt(tba[1]);
+
+            m.setKeybind(key);
+        }
+
+        KEYBIND_FILE.delete();
+        KEYBIND_FILE.createNewFile();
+
     }
 
     public static void saveActiveMods() throws IOException {
