@@ -3,6 +3,7 @@ package me.tl0x.ferdieclient.mixin.control;
 
 import me.tl0x.ferdieclient.FerdieClient;
 import me.tl0x.ferdieclient.base.reg.ConfigHandler;
+import me.tl0x.ferdieclient.helpers.font.FontRenderer;
 import net.minecraft.client.MinecraftClient;
 import org.apache.logging.log4j.Level;
 import org.spongepowered.asm.mixin.Mixin;

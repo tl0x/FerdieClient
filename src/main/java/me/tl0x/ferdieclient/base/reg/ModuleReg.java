@@ -6,7 +6,7 @@ import me.tl0x.ferdieclient.base.modules.exploit.*;
 import me.tl0x.ferdieclient.base.modules.misc.AutoEzModule;
 import me.tl0x.ferdieclient.base.modules.misc.FakeHackerModule;
 import me.tl0x.ferdieclient.base.modules.render.FullBrightModule;
-import me.tl0x.ferdieclient.base.modules.render.Tracers;
+import me.tl0x.ferdieclient.base.modules.render.TracersModule;
 import me.tl0x.ferdieclient.base.modules.util.AutoElytraModule;
 import me.tl0x.ferdieclient.base.modules.util.ClickGuiModule;
 import me.tl0x.ferdieclient.base.modules.util.HudModule;
@@ -32,7 +32,7 @@ public class ModuleReg {
         modules.add(new HudModule());
         modules.add(new SpeedMineModule());
         modules.add(new SpeedModule());
-        modules.add(new Tracers());
+        modules.add(new TracersModule());
         modules.add(new NoFallModule());
         modules.add(new TestModule());
         modules.add(new XCarryModule());

@@ -5,6 +5,6 @@ import javax.swing.JOptionPane;
 public class Main {
 
     public static void main(String[] args) {
-        JOptionPane.showMessageDialog(null, "To install FerdieClient, put this in your mods folder along with fabric api");
+        JOptionPane.showMessageDialog(null, "To install FerdieClient, put this in your mods folder along with fabric api", "Error",JOptionPane.WARNING_MESSAGE);
     }
 }

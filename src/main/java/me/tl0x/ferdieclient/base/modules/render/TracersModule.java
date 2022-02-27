@@ -6,8 +6,6 @@ import me.tl0x.ferdieclient.base.modules.ModuleType;
 import me.tl0x.ferdieclient.helpers.render.Renderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.passive.CowEntity;
-import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.Vec3d;
 
@@ -17,9 +15,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.StreamSupport;
 
-public class Tracers extends Module {
+public class TracersModule extends Module {
 
-    public Tracers() {
+    public TracersModule() {
         super("Tracers", "Draws a line to other players");
         this.setModuleType(ModuleType.MODULETYPE_RENDER);
     }
@@ -32,7 +30,7 @@ public class Tracers extends Module {
 
         for (Entity e: entities) {
             if (e instanceof PlayerEntity && e != FerdieClient.client.player) {
-                Renderer.renderLine3d(crosshairpos, e.getPos(), Color.WHITE, matrices);
+                Renderer.renderLine3d(crosshairpos, e.getPos().add(new Vec3d(0,1,0)), Color.WHITE, matrices);
             }
         }
         super.onRender(matrices, tickDelta);

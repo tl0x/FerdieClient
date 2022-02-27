@@ -12,6 +12,7 @@
     "control.MinecraftClientAccessor",
     "control.GameRendererMixin",
     "control.MouseMixin",
+    "control.TitleScreenMixin",
     "control.PlayerEntityMixin",
     "control.TickMixin",
     "control.ClientPlayerEntityMixin",
