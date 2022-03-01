@@ -2,8 +2,7 @@
 
 Welcome to the 1.18 Branch. Here are all the "Working" features.
 
-First build out! (Go to libs/build)
-
+# Yes, the code is doggy.
 
 Commands:
 
