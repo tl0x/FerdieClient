@@ -1,29 +1,30 @@
 {
   "schemaVersion": 1,
-  "id": "ferdieclient",
+  "id": "FC",
   "version": "${version}",
-  "name": "FerdieClient1.18.1",
-  "description": "FerdieClient but for 1.18",
+  "name": "FerdieClient",
+  "description": "A Utility Mod for Anarchy servers in Minecraft",
   "authors": [
     "tl0x"
   ],
   "contributors": [],
-  "contact": {},
+  "contact": {
+    "sources": "https://github.com/tl0x/FerdieClient"
+  },
   "license": "MIT",
-  "icon": "assets/ferdieclient/icon.png",
+  "icon": "assets/FC/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "me.tl0x.ferdieclient.FerdieClient"
+      "me.tl0x.FerdieClient.FerdieClient"
     ],
     "client": [],
     "server": []
   },
   "mixins": [
-    "ferdieclient.mixins.json"
+    "FC.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.11.5",
-    "fabric": "*"
+    "fabricloader": ">=0.12.2"
   }
 }
