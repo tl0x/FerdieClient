@@ -2,7 +2,7 @@
 
 Welcome to the 1.18 Branch. Here are all the "Working" features.
 
-# Yes, the code is doggy.
+# Archived due to lack of interest and working with 1 year old code when I was just a beginner is pain. (Will work on a new client soon)
 
 Commands:
 
